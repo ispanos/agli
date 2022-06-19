@@ -1,0 +1,18 @@
+---
+hostname: name
+dotfiles: "https://github.com/ispanos/dotfiles/"
+post_install:
+  run:
+    - echo 'blacklist pcspkr' | sudo tee /etc/modprobe.d/beep-blacklist.conf
+    - ./vars/gsettings
+
+    # INVALID YAML
+    # - \[ "$(command -v virtualbox)" \] \&\& sudo usermod -aG vboxusers "$USER"
+    # - \[ "$(command -v docker)" \] \&\& sudo usermod -aG docker "$USER"
+    # - >
+      # [ "$(command -v sway)" ] &&
+      # sudo sed -i 's/^Exec=sway$/Exec=\/bin\/zsh -l -c sway/'
+      # /usr/share/wayland-sessions/sway.desktop
+    # - >
+    #   systemctl enable --now libvirtd &&
+    #   usermod -aG libvirt "$USER"

@@ -1,0 +1,53 @@
+---
+packages:
+  - package: code
+    purpose: IDE
+
+  - package: cmake
+  - package: dialog
+  - package: fd-find
+  - package: fzf
+  - package: jq
+  - package: nmap
+  - package: npm
+  - package: obs-studio
+  - package: odt2txt
+  - package: python3-autopep8
+  - package: python3-matplotlib
+  - package: python3-numpy
+  - package: python3-tqdm
+  - package: python3-pandas
+  - package: python3-pylint
+  - package: python3-seaborn
+  - package: python3-pyyaml
+  - package: pdftk-java
+    purpose: Editing pdf files
+  - package: qpdf
+  - package: remmina
+    purpose: RDP and VNC client
+  - package: ShellCheck
+  - package: sqlitebrowser
+  - package: texlive-scheme-basic
+  # - package: timeshift
+  #   purpose: Backups
+  - package: "@virtualization"
+  - package: w3m
+
+  - package: io.dbeaver.DBeaverCommunity
+    manager: flatpak
+  - package: io.dbeaver.DBeaverCommunity.Client.mariadb
+    manager: flatpak
+
+  - package: gretl
+    purpose: Econometrics analysis package
+
+  - package: octave
+    purpose: A high-level language for numerical computations
+
+  - package: md.obsidian.Obsidian
+    purpose: A knowledge base that works on local Markdown files.
+    manager: flatpak
+
+
+  - package: adwaita-gtk2-theme
+    purpose: For stata dark theme

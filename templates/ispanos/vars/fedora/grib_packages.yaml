@@ -1,0 +1,9 @@
+---
+packages:
+  - package: gdal
+  - package: gdal-devel
+  - package: gdal-libs
+  - package: grib_api
+  - package: python3-gdal
+  - package: eccodes
+  - package: gdal-python-tools

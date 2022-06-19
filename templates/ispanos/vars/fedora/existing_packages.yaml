@@ -1,0 +1,20 @@
+---
+packages:
+  # Already installed packages
+  - package: bash-completion
+  - package: exfatprogs
+  - package: gnome-tweaks
+  - package: nano
+  - package: net-tools
+  - package: ntfs-3g
+  - package: openssh
+  - package: PackageKit-command-not-found
+  - package: rsync
+  - package: usbutils
+  - package: wpa_supplicant
+  - package: bc
+  - package: dosfstools
+  - package: fedora-workstation-repositories
+  - package: findutils
+  - package: tmux
+  - package: tree

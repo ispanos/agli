@@ -1,0 +1,248 @@
+#!/bin/bash
+
+echo "Appling gsettings"
+
+# [org/gnome/system/location]
+# enabled=false
+
+
+# [org/gnome/shell/extensions/improved-workspace-indicator]
+# panel-position='left'
+# skip-taskbar-mode=true
+
+# [org/gnome/shell/extensions/caffeine]
+# nightlight-control='never'
+# show-notifications=false
+
+
+
+gsettings set org.gnome.shell.overrides attach-modal-dialogs false
+gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
+gsettings set org.gnome.shell.overrides dynamic-workspaces false
+gsettings set org.gnome.shell.overrides edge-tiling true
+gsettings set org.gnome.desktop.wm.preferences num-workspaces 6
+
+
+# Power settings
+gsettings set org.gnome.settings-daemon.plugins.power idle-dim true # false not working?
+gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 50
+gsettings set org.gnome.desktop.session idle-delay 300
+
+gsettings set org.gnome.desktop.interface show-battery-percentage true
+
+gsettings set org.gnome.shell.keybindings toggle-overview "[]" # '<Super>s'
+
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-battery-timeout 1200
+gsettings set org.gnome.settings-daemon.plugins.power sleep-inactive-ac-timeout 3600
+
+
+# gsettings set org.gnome.desktop.interface text-scaling-factor 1.3
+# disable system sounds
+
+# disable existing keybindings for <Super>+[number]
+gsettings set org.gnome.shell.keybindings switch-to-application-1 "[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-2 "[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-3 "[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-4 "[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-5 "[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-6 "[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-7 "[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-8 "[]"
+gsettings set org.gnome.shell.keybindings switch-to-application-9 "[]"
+#gsettings set org.gnome.shell.keybindings switch-to-application-10 "[]"
+
+# set new keybindings
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-1 "['<Super>1']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-2 "['<Super>2']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-3 "['<Super>3']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-4 "['<Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-5 "['<Super>5']"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-6 "['<Super>6']"
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-7 "['<Super>7']"
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-8 "['<Super>8']"
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-9 "['<Super>9']"
+# gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-10 "['<Super>0']"
+gsettings set org.gnome.desktop.wm.keybindings close "['<Super>q']"
+
+
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-right "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings switch-to-workspace-down "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-up "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-down "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-left "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-right "[]"
+
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-1 "['<Shift><Super>1']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Super>2']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Super>3']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Super>4']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Super>5']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Super>6']"
+
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "['<Super><Shift>Down']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-left "['<Super><Shift>Left']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-right "['<Super><Shift>Right']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-up "['<Super><Shift>Up']"
+
+
+gsettings set org.gnome.shell.keybindings toggle-message-tray "['<Super>m']"
+gsettings set org.gnome.mutter.keybindings switch-monitor "['XF86Display']"
+
+gsettings set org.gnome.desktop.wm.keybindings cycle-windows "['<Alt>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings cycle-windows-backward "['<Shift><Alt>Tab']"
+
+gsettings set org.gnome.desktop.wm.keybindings switch-applications "['<Super>Tab']"
+gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<Shift><Super>Tab']"
+
+
+gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Control>semicolon']"
+
+# [org/gnome/settings-daemon/plugins/media-keys]
+
+# [org.gnome.settings-daemon.plugins.media-keys]
+# custom-keybindings="${custom_keys}"
+# calculator="['<Super>g']"
+# # www="['<Super>z']"
+# home="['<Super>f']"
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys calculator "['<Super>g']"
+gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>f']"
+
+
+custom_keys="[\
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/',\
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/',\
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/',\
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/',\
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/',\
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/',\
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/',\
+'/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/'\
+]"
+
+
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "${custom_keys}"
+
+# 0
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'launch code'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'code'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Super>x'
+
+# 1
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'terminal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'alacritty'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Super>Return'
+
+
+# 2 
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'firefox'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'firefox'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Primary><Super>z'
+
+
+# 3
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name 'editor'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command 'gnome-text-editor'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding '<Super>t'
+
+
+# 4
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ name 'chrome personal'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ command 'google-chrome --profile-directory=Default'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ binding '<Super>z'
+
+
+# 5
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ name 'chrome work'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ command "google-chrome --profile-directory='Profile 1'"
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ binding '<Shift><Super>z'
+
+
+# 6
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name 'calendar'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command 'gnome-calendar'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding '<Super>c'
+
+
+# 7
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name 'btoggle'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command 'btoggle'
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding '<Control><Super>p'
+
+
+
+
+# [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+# binding='<Super>x'
+# command='code'
+# name='launch code'
+
+# [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1]
+# binding='<Super>Return'
+# command='alacritty'
+# name='terminal'
+
+
+# [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2]
+# binding='<Primary><Super>z'
+# command='firefox'
+# name='firefox'
+
+# [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3]
+# binding='<Super>t'
+# command='gnome-text-editor'
+# name='editor'
+
+# [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4]
+# binding='<Super>z'
+# command='google-chrome --profile-directory=Default'
+# name='chrome personal'
+
+# [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5]
+# binding='<Shift><Super>z'
+# command="google-chrome --profile-directory='Profile 1'"
+# name='chrome work'
+
+# [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6]
+# binding='<Super>c'
+# command='gnome-calendar'
+# name='calendar'
+
+# [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7]
+# binding='<Control><Super>p'
+# command='btoggle'
+# name='btoggle'
+
+
+
+
+# TODO:
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-corner-ne "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-corner-nw "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-corner-se "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-corner-sw "[]"
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-side-e "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-side-w "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-side-s "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-side-n "[]"
+
+
+# Keybindings
+# gsettings set org.gnome.shell.keybindings toggle-overview "[]"
+# gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Super>Left']"
+# gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Super>Right']"
+# gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Alt>F5']"
+# gsettings set org.gnome.desktop.wm.keybindings always-on-top "['<Alt>F6']"
+# gsettings set org.gnome.desktop.wm.keybindings toggle-shaded "[]"
+# gsettings set org.gnome.desktop.wm.keybindings minimize "['<Alt>F9']"
+# gsettings set org.gnome.desktop.wm.keybindings maximize-vertically "['<Alt>F11']"
+# gsettings set org.gnome.desktop.wm.keybindings maximize-horizontally "['<Alt>F12']"
+# gsettings set org.gnome.desktop.wm.keybindings maximize "[]"
+# gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Alt>F10']"

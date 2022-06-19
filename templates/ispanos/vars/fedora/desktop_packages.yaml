@@ -1,0 +1,75 @@
+---
+packages:
+  - package: gthumb
+  - package: mpv
+  - package: g810-led
+    purpose: keyboard led driver
+    repository: lkiesow/g810-led
+
+  - dropbox
+  - nautilus-dropbox
+  - seahorse
+
+  - package: net.cozic.joplin_desktop
+    purpose: Note taking application
+    manager: flatpak
+
+  - package: seahorse
+    purpose: graphical interface for managing and using encryption keys.
+  - seahorse-nautilus
+
+  - file-roller-nautilus
+  - gnome-shell-extension-gsconnect
+  - gnome-tweaks
+
+  - package: com.mattjakeman.ExtensionManager
+    manager: flatpak
+
+  - package: gnome-shell-extension-appindicator
+    purpose: Tray icons  # Right click menus don't work
+
+  - package: gnome-commander
+    purpose: A more powerful file manager
+
+  - package: transmission
+
+  - package: org.gimp.GIMP
+    manager: flatpak
+  - package: org.audacityteam.Audacity
+    manager: flatpak
+  - package: com.anydesk.Anydesk
+    manager: flatpak
+
+  - package: alsa-tools
+    purpose: Provides hdajackretask - Can disable unused audio cards
+
+  - package: qjackctl
+    purpose: Audio input-output connections using graph
+
+  - google-chrome-stable
+
+  - package: org.gnome.gitlab.YaLTeR.VideoTrimmer
+    manager: flatpak
+  - package: nl.hjdskes.gcolor3
+    manager: flatpak
+  - package: com.stremio.Stremio
+    manager: flatpak
+
+  - package: com.microsoft.Teams
+    manager: flatpak
+  - package: us.zoom.Zoom
+    manager: flatpak
+  - package: com.discordapp.Discord
+    manager: flatpak
+  - package: com.skype.Client
+    manager: flatpak
+  - package: com.spotify.Client
+    manager: flatpak
+  - package: com.ulduzsoft.Birdtray
+    manager: flatpak
+  - package: org.mozilla.Thunderbird
+    manager: flatpak
+
+  - wine
+  - package: gperftools-libs
+    purpose: Needed for CS:GO

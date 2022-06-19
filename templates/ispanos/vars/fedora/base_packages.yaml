@@ -1,0 +1,27 @@
+---
+packages:
+  - alacritty
+  - atool
+  - bat
+  - exa
+  - fontawesome-fonts-web
+  - hddtemp
+  - highlight
+  - htop
+  - inxi
+  - lshw
+  - mediainfo
+  - neofetch
+  - nvme-cli
+  - openssh
+  - p7zip
+  - procinfo
+  - procs
+  # - package: simple-mtpfs
+  #   purpose: CLI MTP filesystem utility
+  - smartmontools
+  - util-linux-user
+  - yt-dlp
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting

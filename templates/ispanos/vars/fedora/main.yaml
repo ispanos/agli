@@ -1,0 +1,74 @@
+---
+pre_install:
+  files:
+    - path: "/etc/yum.repos.d/vscode.repo"
+      content: |
+        [code]
+        name=Visual Studio Code
+        baseurl=https://packages.microsoft.com/yumrepos/vscode
+        enabled=1
+        gpgcheck=1
+        gpgkey=https://packages.microsoft.com/keys/microsoft.asc
+
+  run:
+    - >
+      grep 'fastestmirror=1' /etc/dnf/dnf.conf ||
+      echo 'fastestmirror=1' |
+      sudo tee -a /etc/dnf/dnf.conf
+
+    - >
+      grep 'max_parallel_downloads=10' /etc/dnf/dnf.conf ||
+      echo 'max_parallel_downloads=10' |
+      sudo tee -a /etc/dnf/dnf.conf
+
+    - >
+      grep 'deltarpm=true' /etc/dnf/dnf.conf ||
+      echo 'deltarpm=true' |
+      sudo tee -a /etc/dnf/dnf.conf
+
+    - >
+      grep 'defaultyes=True' /etc/dnf/dnf.conf ||
+      echo 'defaultyes=True' |
+      sudo tee -a /etc/dnf/dnf.conf
+
+prerequisite_packages:
+  - fedora-workstation-repositories
+  # RPM Fusion - free and non free repositories:
+  - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+  - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+  # RPM Sphere - Probably update manually: https://rpmsphere.github.io/
+  - https://github.com/rpmsphere/noarch/raw/master/r/rpmsphere-release-36-1.noarch.rpm
+
+include:
+  - vars/fedora/base_packages.yaml
+  - vars/fedora/desktop_packages.yaml
+  - vars/fedora/workstation.yaml
+  - vars/fedora/r.yaml
+  - vars/fedora/existing_packages.yaml
+  - vars/fedora/docker.yaml
+
+packages:
+  - >
+    gstreamer1-plugins-{bad-\*,good-\*,base}
+    gstreamer1-plugin-openh264
+    gstreamer1-libav
+    --exclude=gstreamer1-plugins-bad-free-devel \
+  - lame\* --exclude=lame-devel
+
+remove:
+  - gnome-boxes
+  - gnome-shell-extension-window-list
+  - gnome-tour
+  - gnome-photos
+  - gnome-maps
+  - gnome-help
+  - abiword
+  # `gnome-shell-extension-window-list` will also remove `gnome-classic-session`,
+  # `gnome-shell-extension-apps-menu`, `gnome-shell-extension-launch-new-instance`,
+  # `gnome-shell-extension-places-menu`.
+
+post_install:
+  run:
+    - sudo dnf group upgrade --with-optional Multimedia -y
+    - chsh {current_user} -s /usr/bin/zsh
+    - sudo usermod -a -G libvirt {current_user}

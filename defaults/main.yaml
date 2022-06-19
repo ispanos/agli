@@ -1,0 +1,36 @@
+---
+dotfiles:
+hostname: bootstraped
+pre_install:
+  run:
+  files:
+prerequisite_packages:
+  - flatpak
+  - manager: flatpak
+    repository: flathub https://flathub.org/repo/flathub.flatpakrepo
+packages:
+remove:
+post_install:
+  run:
+  files:
+
+package_managers:  # Commands needed for the generic package manager
+  fedora:  # Dnf for fedora workstaton - No idea how Silverblue works
+    install: dnf install -y
+    remove: dnf remove -y
+    upgrade: dnf upgrade -y
+    search: dnf search
+    list_installed: dnf list installed
+    add_extra_repo: dnf copr enable -y
+    use_sudo: true
+  flatpak:
+    install: flatpak install -y --system flathub
+    remove: flatpak uninstall -y
+    upgrade: flatpak update -y
+    search: flatpak search
+    list_installed: flatpak list --columns=name
+    add_extra_repo: flatpak remote-add --if-not-exists
+  pip:
+    install: /usr/bin/pip install --user
+    remove: /usr/bin/pip uninstall --yes --user
+    list_installed: /usr/bin/pip list installed

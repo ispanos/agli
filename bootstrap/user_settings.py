@@ -26,6 +26,7 @@ def clone_dotfiles(user: str = None, repo: str = None) -> None:
 
     if not repo:
         log_print("Skipping; dotfiles' repository was not defined.")
+        return
 
     if not user:
         user = getpass.getuser()

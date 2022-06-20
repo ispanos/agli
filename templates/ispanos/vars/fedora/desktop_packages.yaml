@@ -2,13 +2,13 @@
 packages:
   - package: gthumb
   - package: mpv
+
   - package: g810-led
-    purpose: keyboard led driver
+    purpose: G810 keyboard led driver
     repository: lkiesow/g810-led
 
   - dropbox
   - nautilus-dropbox
-  - seahorse
 
   - package: net.cozic.joplin_desktop
     purpose: Note taking application
@@ -25,33 +25,30 @@ packages:
   - package: com.mattjakeman.ExtensionManager
     manager: flatpak
 
-  - package: gnome-shell-extension-appindicator
-    purpose: Tray icons  # Right click menus don't work
-
-  - package: gnome-commander
-    purpose: A more powerful file manager
-
-  - package: transmission
-
-  - package: org.gimp.GIMP
-    manager: flatpak
-  - package: org.audacityteam.Audacity
-    manager: flatpak
-  - package: com.anydesk.Anydesk
-    manager: flatpak
-
-  - package: alsa-tools
-    purpose: Provides hdajackretask - Can disable unused audio cards
-
-  - package: qjackctl
-    purpose: Audio input-output connections using graph
+  # - package: gnome-shell-extension-appindicator
+  #   purpose: Tray icons  # Right click menus don't work
 
   - google-chrome-stable
 
+  - package: alsa-tools
+    purpose: Provides hdajackretask - Can disable unused audio cards
+  - package: qjackctl
+    purpose: Audio input-output connections using graph
+
+  - audacity
+  - gimp
+  - gcolor3
+  # - package: org.gimp.GIMP
+  #   manager: flatpak
+  # - package: org.audacityteam.Audacity
+  #   manager: flatpak
+  # - package: nl.hjdskes.gcolor3
+  #   manager: flatpak
+
   - package: org.gnome.gitlab.YaLTeR.VideoTrimmer
     manager: flatpak
-  - package: nl.hjdskes.gcolor3
-    manager: flatpak
+
+  - transmission
   - package: com.stremio.Stremio
     manager: flatpak
 
@@ -69,7 +66,3 @@ packages:
     manager: flatpak
   - package: org.mozilla.Thunderbird
     manager: flatpak
-
-  - wine
-  - package: gperftools-libs
-    purpose: Needed for CS:GO

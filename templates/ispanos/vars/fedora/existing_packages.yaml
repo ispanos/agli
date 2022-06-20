@@ -14,7 +14,6 @@ packages:
   - package: wpa_supplicant
   - package: bc
   - package: dosfstools
-  - package: fedora-workstation-repositories
   - package: findutils
   - package: tmux
   - package: tree

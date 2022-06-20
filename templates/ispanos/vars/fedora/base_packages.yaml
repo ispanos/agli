@@ -1,7 +1,6 @@
 ---
 packages:
   - alacritty
-  - atool
   - bat
   - exa
   - fontawesome-fonts-web

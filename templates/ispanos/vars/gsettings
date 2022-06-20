@@ -2,18 +2,11 @@
 
 echo "Appling gsettings"
 
-# [org/gnome/system/location]
-# enabled=false
+# Mirror mode
+# gsettings set org.gnome.desktop.remote-desktop.rdp screen-share-mode 'mirror-primary'
 
-
-# [org/gnome/shell/extensions/improved-workspace-indicator]
-# panel-position='left'
-# skip-taskbar-mode=true
-
-# [org/gnome/shell/extensions/caffeine]
-# nightlight-control='never'
-# show-notifications=false
-
+# Extra screen mode (only works on Wayland)
+gsettings set org.gnome.desktop.remote-desktop.rdp screen-share-mode 'extend'
 
 
 gsettings set org.gnome.shell.overrides attach-modal-dialogs false
@@ -80,7 +73,7 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-2 "['<Shift><Su
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-3 "['<Shift><Super>3']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-4 "['<Shift><Super>4']"
 gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Super>5']"
-gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-5 "['<Shift><Super>6']"
+gsettings set org.gnome.desktop.wm.keybindings move-to-workspace-6 "['<Shift><Super>6']"
 
 
 gsettings set org.gnome.desktop.wm.keybindings move-to-monitor-down "['<Super><Shift>Down']"
@@ -101,13 +94,6 @@ gsettings set org.gnome.desktop.wm.keybindings switch-applications-backward "['<
 
 gsettings set org.freedesktop.ibus.panel.emoji hotkey "['<Control>semicolon']"
 
-# [org/gnome/settings-daemon/plugins/media-keys]
-
-# [org.gnome.settings-daemon.plugins.media-keys]
-# custom-keybindings="${custom_keys}"
-# calculator="['<Super>g']"
-# # www="['<Super>z']"
-# home="['<Super>f']"
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys calculator "['<Super>g']"
 gsettings set org.gnome.settings-daemon.plugins.media-keys home "['<Super>f']"
@@ -123,8 +109,6 @@ custom_keys="[\
 '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/',\
 '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/'\
 ]"
-
-
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "${custom_keys}"
 
@@ -175,6 +159,53 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding '<Control><Super>p'
 
 
+# TODO:
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-corner-ne "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-corner-nw "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-corner-se "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-corner-sw "[]"
+
+gsettings set org.gnome.desktop.wm.keybindings move-to-side-e "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-side-w "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-side-s "[]"
+gsettings set org.gnome.desktop.wm.keybindings move-to-side-n "[]"
+
+
+# Keybindings
+# gsettings set org.gnome.shell.keybindings toggle-overview "[]"
+# gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Super>Left']"
+# gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Super>Right']"
+# gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Alt>F5']"
+# gsettings set org.gnome.desktop.wm.keybindings always-on-top "['<Alt>F6']"
+# gsettings set org.gnome.desktop.wm.keybindings toggle-shaded "[]"
+# gsettings set org.gnome.desktop.wm.keybindings minimize "['<Alt>F9']"
+# gsettings set org.gnome.desktop.wm.keybindings maximize-vertically "['<Alt>F11']"
+# gsettings set org.gnome.desktop.wm.keybindings maximize-horizontally "['<Alt>F12']"
+# gsettings set org.gnome.desktop.wm.keybindings maximize "[]"
+# gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Alt>F10']"
+
+
+# [org/gnome/system/location]
+# enabled=false
+
+
+# [org/gnome/shell/extensions/improved-workspace-indicator]
+# panel-position='left'
+# skip-taskbar-mode=true
+
+# [org/gnome/shell/extensions/caffeine]
+# nightlight-control='never'
+# show-notifications=false
+
+
+# [org/gnome/settings-daemon/plugins/media-keys]
+
+# [org.gnome.settings-daemon.plugins.media-keys]
+# custom-keybindings="${custom_keys}"
+# calculator="['<Super>g']"
+# # www="['<Super>z']"
+# home="['<Super>f']"
 
 
 # [org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
@@ -217,32 +248,3 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 # binding='<Control><Super>p'
 # command='btoggle'
 # name='btoggle'
-
-
-
-
-# TODO:
-
-gsettings set org.gnome.desktop.wm.keybindings move-to-corner-ne "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-corner-nw "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-corner-se "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-corner-sw "[]"
-
-gsettings set org.gnome.desktop.wm.keybindings move-to-side-e "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-side-w "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-side-s "[]"
-gsettings set org.gnome.desktop.wm.keybindings move-to-side-n "[]"
-
-
-# Keybindings
-# gsettings set org.gnome.shell.keybindings toggle-overview "[]"
-# gsettings set org.gnome.mutter.keybindings toggle-tiled-left "['<Super>Left']"
-# gsettings set org.gnome.mutter.keybindings toggle-tiled-right "['<Super>Right']"
-# gsettings set org.gnome.desktop.wm.keybindings unmaximize "['<Alt>F5']"
-# gsettings set org.gnome.desktop.wm.keybindings always-on-top "['<Alt>F6']"
-# gsettings set org.gnome.desktop.wm.keybindings toggle-shaded "[]"
-# gsettings set org.gnome.desktop.wm.keybindings minimize "['<Alt>F9']"
-# gsettings set org.gnome.desktop.wm.keybindings maximize-vertically "['<Alt>F11']"
-# gsettings set org.gnome.desktop.wm.keybindings maximize-horizontally "['<Alt>F12']"
-# gsettings set org.gnome.desktop.wm.keybindings maximize "[]"
-# gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Alt>F10']"

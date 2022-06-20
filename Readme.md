@@ -37,7 +37,7 @@ You can delete the `.cfg/` directory or use the following alias to commit and pu
 hostname:
 ```
 
-When given a hostname (string) it modifies `/etc/hostname` and `/etc/hosts`, and runs `hostnamectl set-hostname {hostname}` to change the hostname. **Do not use this feature if you added lines to `/etc/hosts`**.
+Runs `sudo hostnamectl set-hostname {hostname}` to change the hostname.
 
 ```yaml
 package_managers:
@@ -120,6 +120,8 @@ These are dictionaries that include a `files` list and a `run` list. They are ru
 `run` is a list of commands that will be concatenated into a single file and will be executed as a bash script. These lists are basically a way to expand my script with your existing bash scripts (since commands can also be executable files).
 
 `files` is a list of dictionaries that have a `path:` and a `content:`. Use it with caution, because it overrides existing files.
+
+**WARNING**: There is also a `use_sudo` field, but do not use it, useless you test it in a VM first. It will change file permissions/ownership and may cause issues to your system.
 
 ```yaml
 remove:

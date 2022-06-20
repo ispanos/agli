@@ -1,6 +1,6 @@
 ---
 dotfiles:
-hostname: bootstraped
+# hostname:
 pre_install:
   run:
   files:

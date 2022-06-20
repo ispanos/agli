@@ -15,6 +15,12 @@ echo "Appling gsettings"
 # show-notifications=false
 
 
+# Mirror mode
+# gsettings get org.gnome.desktop.remote-desktop.rdp screen-share-mode 'mirror-primary'
+
+# Extra screen mode
+gsettings set org.gnome.desktop.remote-desktop.rdp screen-share-mode extend
+
 
 gsettings set org.gnome.shell.overrides attach-modal-dialogs false
 gsettings set org.gnome.desktop.wm.preferences button-layout ":minimize,maximize,close"
@@ -246,3 +252,4 @@ gsettings set org.gnome.desktop.wm.keybindings move-to-side-n "[]"
 # gsettings set org.gnome.desktop.wm.keybindings maximize-horizontally "['<Alt>F12']"
 # gsettings set org.gnome.desktop.wm.keybindings maximize "[]"
 # gsettings set org.gnome.desktop.wm.keybindings toggle-maximized "['<Alt>F10']"
+

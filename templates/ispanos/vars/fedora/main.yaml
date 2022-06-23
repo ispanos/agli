@@ -64,6 +64,7 @@ remove:
   - gnome-maps
   - gnome-help
   - abiword
+  - mediawriter
   # `gnome-shell-extension-window-list` will also remove `gnome-classic-session`,
   # `gnome-shell-extension-apps-menu`, `gnome-shell-extension-launch-new-instance`,
   # `gnome-shell-extension-places-menu`.

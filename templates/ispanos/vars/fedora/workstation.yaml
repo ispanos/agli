@@ -53,6 +53,7 @@ packages:
     purpose: A knowledge base that works on local Markdown files.
     manager: flatpak
 
+  - libpng12
   - package: adwaita-gtk2-theme
     purpose: For stata dark theme
 

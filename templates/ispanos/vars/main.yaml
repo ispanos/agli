@@ -5,6 +5,7 @@ post_install:
   run:
     - echo 'blacklist pcspkr' | sudo tee /etc/modprobe.d/beep-blacklist.conf
     - ./vars/gsettings
+    - ./vars/setup
 
     # INVALID YAML
     # - \[ "$(command -v virtualbox)" \] \&\& sudo usermod -aG vboxusers "$USER"

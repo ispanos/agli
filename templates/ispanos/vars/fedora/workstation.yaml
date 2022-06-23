@@ -1,12 +1,16 @@
 ---
 packages:
+
+  - package: gnome-commander
+    purpose: A more powerful file manager
+
   - package: code
     purpose: IDE
 
   - package: cmake
   - package: dialog
   - package: fd-find
-  - package: fzf
+  # - package: fzf
   - package: jq
   - package: nmap
   - package: npm
@@ -23,6 +27,7 @@ packages:
   - package: pdftk-java
     purpose: Editing pdf files
   - package: qpdf
+    purpose: Editing pdf files
   - package: remmina
     purpose: RDP and VNC client
   - package: ShellCheck
@@ -31,12 +36,12 @@ packages:
   # - package: timeshift
   #   purpose: Backups
   - package: "@virtualization"
-  - package: w3m
+  # - package: w3m
 
-  - package: io.dbeaver.DBeaverCommunity
-    manager: flatpak
-  - package: io.dbeaver.DBeaverCommunity.Client.mariadb
-    manager: flatpak
+  # - package: io.dbeaver.DBeaverCommunity
+  #   manager: flatpak
+  # - package: io.dbeaver.DBeaverCommunity.Client.mariadb
+  #   manager: flatpak
 
   - package: gretl
     purpose: Econometrics analysis package
@@ -48,6 +53,9 @@ packages:
     purpose: A knowledge base that works on local Markdown files.
     manager: flatpak
 
-
+  - libpng12
   - package: adwaita-gtk2-theme
     purpose: For stata dark theme
+
+  - package: com.anydesk.Anydesk
+    manager: flatpak

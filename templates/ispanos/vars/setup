@@ -3,7 +3,7 @@
 # Fix ownership and permissions of custon GNUPGHOME dir.
 
 if [ ! -d "$GNUPGHOME" ]; then
-    mkdir "$GNUPGHOME"
+    mkdir -p "$GNUPGHOME"
     chown -R "$(whoami)" "$GNUPGHOME"/
     find "$GNUPGHOME" -type f -exec chmod 600 {} \;
     find "$GNUPGHOME" -type d -exec chmod 700 {} \;

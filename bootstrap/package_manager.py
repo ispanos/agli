@@ -31,7 +31,8 @@ class PackageManager():
             return
         for pm_alias, pm_packages in packages.items():
             pm = self._get_package_manager(pm_alias)
-            pm.remove(pm_packages)
+            if 'packages' in pm_packages:
+                pm.remove(pm_packages['packages'])
 
     def upgrade(self):
         raise Sorry()

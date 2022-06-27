@@ -2,9 +2,30 @@
 
 # Fix ownership and permissions of custon GNUPGHOME dir.
 
-if [ ! -d "$GNUPGHOME" ]; then
-    mkdir -p "$GNUPGHOME"
-    chown -R "$(whoami)" "$GNUPGHOME"/
-    find "$GNUPGHOME" -type f -exec chmod 600 {} \;
-    find "$GNUPGHOME" -type d -exec chmod 700 {} \;
-fi
+# GNUPGHOME="/home/yiannis/.config/gnupg"
+
+# if [ ! -d "$GNUPGHOME" ]; then
+#     mkdir -p "$GNUPGHOME"
+#     chown -R "$(whoami)" "$GNUPGHOME"/
+#     find "$GNUPGHOME" -type f -exec chmod 600 {} \;
+#     find "$GNUPGHOME" -type d -exec chmod 700 {} \;
+# fi
+
+
+[ "$(command -v virtualbox)" ] && sudo usermod -aG vboxusers "$(whoami)"
+[ "$(command -v docker)" ] && sudo usermod -aG docker "$(whoami)"
+# [ "$(command -v sway)" ] &&
+#     sudo sed -i 's/^Exec=sway$/Exec=\/bin\/zsh -l -c sway/'
+#     /usr/share/wayland-sessions/sway.desktop
+systemctl enable --now libvirtd &&
+    usermod -aG libvirt "$(whoami)"
+
+
+# sudo chmod 700 ~/.ssh
+# sudo chmod 644 ~/.ssh/key.pub
+# sudo chmod 600 ~/.ssh/key
+
+# ln -s Dropbox/Documents Documents
+# ln -s Dropbox/Pictures .      
+# ln -s Dropbox/Media\ Library/Music .
+# ln -s Dropbox/Backup/Videos .

@@ -1,0 +1,9 @@
+---
+packages:
+  - libpng12
+  - ncurses-devel
+  - adwaita-gtk2-theme
+
+post_install:
+  run:
+    - sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5

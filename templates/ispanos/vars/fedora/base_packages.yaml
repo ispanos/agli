@@ -16,6 +16,7 @@ packages:
   - p7zip
   - procinfo
   - procs
+  - pv
   # - package: simple-mtpfs
   #   purpose: CLI MTP filesystem utility
   - smartmontools

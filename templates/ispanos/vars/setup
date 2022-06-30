@@ -28,4 +28,4 @@ systemctl enable --now libvirtd &&
 # ln -s Dropbox/Documents Documents
 # ln -s Dropbox/Pictures .      
 # ln -s Dropbox/Media\ Library/Music .
-# ln -s Dropbox/Backup/Videos .
+# ln -s Dropbox/Videos .

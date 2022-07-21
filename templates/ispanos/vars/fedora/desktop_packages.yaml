@@ -1,7 +1,10 @@
 ---
 packages:
+  - firewall-config
   - dropbox
   - nautilus-dropbox
+  - package: xournalpp
+    purpose: Handwriting
 
   - package: net.cozic.joplin_desktop
     purpose: Note taking application

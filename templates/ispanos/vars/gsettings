@@ -2,3 +2,7 @@
 
 echo "Appling gsettings"
 dconf load / < vars/dconf.ini
+
+# gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
+# gsettings set org.gnome.settings-daemon.plugins.power idle-dim 'true'
+# gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/$USER/Downloads/"

@@ -7,7 +7,7 @@ packages:
   - hddtemp
   - highlight
   - htop
-  - inxi
+  - lm_sensors
   - lshw
   - mediainfo
   - neofetch

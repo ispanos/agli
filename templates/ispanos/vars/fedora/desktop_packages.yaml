@@ -18,6 +18,7 @@ packages:
   - gnome-shell-extension-gsconnect
   - gnome-tweaks
 
+  - package: gnome-shell-extension-caffeine
   - package: com.mattjakeman.ExtensionManager
     manager: flatpak
 

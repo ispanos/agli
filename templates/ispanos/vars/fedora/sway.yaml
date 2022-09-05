@@ -1,0 +1,59 @@
+---
+
+packages:
+  - sway
+  - package: swaylock
+    purpose: is a screen locker for Wayland
+  - package: swayidle
+    purpose: handles sway when its idle
+  - package: xorg-x11-server-Xwayland
+    purpose: Xwayland
+  - package: xdg-desktop-portal-wlr xdg-desktop-portal
+    purpose: screen sharing
+  - package: wf-recorder
+  - python3-i3ipc
+  - package: dunst
+    purpose: notification daemons
+  - jq
+  - wofi
+  - grim
+  - packages: slurp
+    purpose: region-screenshot utility for Wayland
+  - pavucontrol
+  - package: brightnessctl
+    purpose: laptop brightness control
+  - package: wdisplays
+    purpose: GUI display configurator for wlroots compositors
+  - network-manager-applet
+  - package: wl-clipboard
+    purpose: clipboard utility
+  - package: clipman
+    purpose: clipboard utility
+  # - package: vulkan-validation-layers
+  #   purpose: WLR_RENDERER=vulkan sway
+  - waybar
+  - blueman
+  - package: pamixer 
+    purpose: PulseAudio cli mixer
+    repository: linuxredneck/pamixer
+  - package: playerctl
+    purpose: media control
+  - package: xsettingsd
+    purpose: Xwayland gtk settings
+
+  - package: lxpolkit
+    purpose: temp solution for polkit
+
+
+post_install:
+  run:
+    # - dot update-index --assume-unchanged ~/.config/sway/config
+    - sudo sed -i 's/^Exec=sway$/Exec=\/bin\/zsh -l -c sway/' /usr/share/wayland-sessions/sway.desktop
+    # - sudo sed -i 's/^Exec=sway$/Exec= XDG_CURRENT_DESKTOP=sway \/bin\/zsh -l -c sway/' /usr/share/wayland-sessions/sway.desktop
+    # - |
+    #     Add to /etc/pam.d/swaylock for better fingerprint scanner support
+    #     auth            sufficient      pam_unix.so try_first_pass likeauth nullok
+    #     auth            sufficient      pam_fprintd.so
+
+# EXTRAS
+# autotiling https://github.com/nwg-piotr/autotiling

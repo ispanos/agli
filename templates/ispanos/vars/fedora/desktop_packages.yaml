@@ -1,8 +1,20 @@
 ---
 packages:
   - firewall-config
+  - >
+    gstreamer1-plugins-{bad-\*,good-\*,base}
+    gstreamer1-plugin-openh264
+    gstreamer1-libav
+    --exclude=gstreamer1-plugins-bad-free-devel \
+  - lame\* --exclude=lame-devel
+  - alacritty
   - dropbox
   - nautilus-dropbox
+
+  # - package: nautilus-python
+  # - package: nautilus-open-any-terminal
+  #   manager: pip
+
   - package: xournalpp
     purpose: Handwriting
 
@@ -26,7 +38,9 @@ packages:
 
   - package: alsa-tools
     purpose: Provides hdajackretask - Can disable unused audio cards
-  - package: qjackctl
+  # - package: qjackctl
+  #   purpose: Audio input-output connections using graph
+  - package: helvum
     purpose: Audio input-output connections using graph
 
   - audacity
@@ -41,7 +55,8 @@ packages:
   - transmission
   - package: com.stremio.Stremio
     manager: flatpak
-
+  - package: org.signal.Signal
+    manager: flatpak
   - package: com.microsoft.Teams
     manager: flatpak
   - package: us.zoom.Zoom
@@ -56,3 +71,17 @@ packages:
     manager: flatpak
   - package: org.mozilla.Thunderbird
     manager: flatpak
+
+  - zathura
+  - zathura-djvu
+  - zathura-pdf-mupdf
+  - zathura-zsh-completion
+
+post_install:
+  run:
+    # - sudo dnf install -y --setopt=install_weak_deps=False
+    - sudo dnf group upgrade --with-optional Multimedia -y
+    # - |
+    #   # nautilus-open-any-terminal
+    #   glib-compile-schemas ~/.local/share/glib-2.0/schemas/
+    #   gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty

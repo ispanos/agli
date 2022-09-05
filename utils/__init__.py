@@ -200,6 +200,11 @@ def sudo_write_file(content: str, perm_location: str) -> None:
         content (str): What will be in the file
         perm_location (str): The file to write to.
     """
+    # TODO: Change implementation:
+    # with tempfile.NamedTemporaryFile(prefix='/tmp/') as fp:
+    # fp.write(b'helloworld')
+    # fp.flush()
+    # shutil.copy(fp.name, "/projects/ptinopedila/name")
     tmp_location = get_rand_tmp_file_name()
 
     with open(tmp_location, 'w') as file:
@@ -212,7 +217,7 @@ def sudo_write_file(content: str, perm_location: str) -> None:
         log_print(diff_files(perm_location, tmp_location))
     else:
         log_print(f"\n\n\nOverwriting file '{perm_location}' with: \n{content}\n\n\n")
-
+    # TODO: Change to cp
     execute_command(f"mv {tmp_location} '{perm_location}'", sudo=True)
 
 

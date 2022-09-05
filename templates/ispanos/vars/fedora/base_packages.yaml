@@ -1,6 +1,5 @@
 ---
 packages:
-  - alacritty
   - bat
   - exa
   - fontawesome-fonts-web
@@ -10,7 +9,6 @@ packages:
   - lm_sensors
   - lshw
   - mediainfo
-  - neofetch
   - nvme-cli
   - openssh
   - p7zip
@@ -20,8 +18,10 @@ packages:
   # - package: simple-mtpfs
   #   purpose: CLI MTP filesystem utility
   - smartmontools
-  - util-linux-user
+  - package: util-linux-user
+    purpose: Provides `chsh` to change to zsh
   - yt-dlp
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+  - sqlite

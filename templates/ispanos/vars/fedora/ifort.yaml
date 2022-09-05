@@ -12,9 +12,10 @@ pre_install:
         gpgkey=https://yum.repos.intel.com/intel-gpg-keys/GPG-PUB-KEY-INTEL-SW-PRODUCTS.PUB
 
 packages:
+  # - package: flang
+  #   purpose: Provides llvm fortran compiler
   - package: intel-hpckit
     purpose: Provides ifort - intel fortran compiler
-  # - flang
 
 post_install:
   run:

@@ -1,4 +1,5 @@
 ---
+# ~ 269 M + 105M for rsrudio
 packages:
   - package: R
 
@@ -12,6 +13,19 @@ packages:
   - package: radian
     purpose: Better R terminal
     manager: pip
+
+  - package: R-CRAN-psych
+    purpose: Provides "describe()"
+  - package: R-CRAN-rio
+    purpose: Simpler way to import files
+  - package: R-CRAN-dplyr
+    purpose: Provides "%>%"
+
+  - package: R-CRAN-languageserver 
+    purpose: Vscode-R
+  - package: R-CRAN-httpgd
+    purpose: Vscode-R
+    # remotes::install_github("ManuelHentschel/vscDebugger")
 
   # R in Jupyter notebook
 
@@ -65,7 +79,6 @@ packages:
   - R-CRAN-crayon
   - R-CRAN-curl
   - R-CRAN-digest
-  - R-CRAN-dplyr
   - R-CRAN-e1071
   - R-CRAN-ellipsis
   - R-CRAN-evaluate
@@ -74,7 +87,6 @@ packages:
   - R-CRAN-forcats
   - R-CRAN-foreach
   - R-CRAN-foreign
-  - R-CRAN-future
   - R-CRAN-future
   - R-CRAN-generics
   - R-CRAN-ggplot2

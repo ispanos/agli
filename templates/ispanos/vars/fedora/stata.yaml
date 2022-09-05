@@ -3,6 +3,7 @@ packages:
   - libpng12
   - ncurses-devel
   - adwaita-gtk2-theme
+  # - PackageKit-gtk3-module
 
 post_install:
   run:

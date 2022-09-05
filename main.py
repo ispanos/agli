@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 
+import argparse
 import os
 
 from bootstrap.config_files import create_files
@@ -59,4 +60,12 @@ def main():
 
 
 if __name__ == "__main__":
+    parser = argparse.ArgumentParser()
+    # parser.add_argument('-x', '--no-main', help='')
+    # parser.add_argument('-i', '--include', help='')
+    # parser.add_argument('command', help='You can use the following commands: search, get, set')
+    # parser.add_argument('-c', '--client', help='IP address of the client device')
+    # parser.add_argument('params', nargs='*', default=None, type=str)
+
+
     main()

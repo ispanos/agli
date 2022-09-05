@@ -6,3 +6,12 @@ dconf load / < vars/dconf.ini
 # gsettings set org.gnome.settings-daemon.plugins.power idle-brightness 100
 # gsettings set org.gnome.settings-daemon.plugins.power idle-dim 'true'
 # gsettings set org.gnome.gnome-screenshot auto-save-directory "file:///home/$USER/Downloads/"
+
+# # Disable gnome-terminal menu bar.
+# gsettings set org.gnome.Terminal.Legacy.Settings default-show-menubar false
+# gsettings set org.gnome.Terminal.Legacy.Settings headerbar false
+
+# # Other gtk settings
+# gsettings set org.gnome.desktop.sound input-feedback-sounds false
+# gsettings set org.gnome.desktop.sound event-sounds false
+# gsettings set org.gnome.desktop.sound allow-volume-above-100-percent false

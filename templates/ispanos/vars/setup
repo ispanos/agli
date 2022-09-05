@@ -24,8 +24,3 @@ systemctl enable --now libvirtd &&
 # sudo chmod 700 ~/.ssh
 # sudo chmod 644 ~/.ssh/key.pub
 # sudo chmod 600 ~/.ssh/key
-
-# ln -s Dropbox/Documents Documents
-# ln -s Dropbox/Pictures .      
-# ln -s Dropbox/Media\ Library/Music .
-# ln -s Dropbox/Videos .

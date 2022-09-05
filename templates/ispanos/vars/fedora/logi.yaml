@@ -19,3 +19,4 @@ packages:
   - package: g810-led
     purpose: G810 keyboard led driver
     repository: lkiesow/g810-led
+  - package: solaar

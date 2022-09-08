@@ -2,7 +2,7 @@
 
 # Fix ownership and permissions of custon GNUPGHOME dir.
 
-# GNUPGHOME="/home/yiannis/.config/gnupg"
+# GNUPGHOME="~/.config/gnupg"
 
 # if [ ! -d "$GNUPGHOME" ]; then
 #     mkdir -p "$GNUPGHOME"

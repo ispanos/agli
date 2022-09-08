@@ -14,8 +14,9 @@ pre_install:
     - sudo localectl set-locale LC_MEASUREMENT=el_GR.UTF-8
     - sudo localectl set-locale LC_TIME=en_GB.UTF-8
     - sudo localectl set-locale LC_NUMERIC=en_US.UTF-8
-    - ./vars/gsettings
+    - echo "Appling gsettings"; dconf load / < vars/dconf.ini
 
 post_install:
   run:
     - chsh {current_user} -s /usr/bin/zsh
+    - sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf

@@ -48,12 +48,10 @@ packages:
 post_install:
   run:
     # - dot update-index --assume-unchanged ~/.config/sway/config
-    - sudo sed -i 's/^Exec=sway$/Exec=\/bin\/zsh -l -c sway/' /usr/share/wayland-sessions/sway.desktop
-    # - sudo sed -i 's/^Exec=sway$/Exec= XDG_CURRENT_DESKTOP=sway \/bin\/zsh -l -c sway/' /usr/share/wayland-sessions/sway.desktop
     # - |
-    #     Add to /etc/pam.d/swaylock for better fingerprint scanner support
+    #     Add to '/etc/pam.d/swaylock' for better fingerprint scanner support
     #     auth            sufficient      pam_unix.so try_first_pass likeauth nullok
     #     auth            sufficient      pam_fprintd.so
 
-# EXTRAS
-# autotiling https://github.com/nwg-piotr/autotiling
+    # EXTRAS
+    # autotiling https://github.com/nwg-piotr/autotiling

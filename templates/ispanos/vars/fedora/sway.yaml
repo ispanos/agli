@@ -32,6 +32,8 @@ packages:
   # - package: vulkan-validation-layers
   #   purpose: WLR_RENDERER=vulkan sway
   - waybar
+  - package: wlsunset
+    purpose: Day/night gamma adjustments for Wayland compositors
   - blueman
   - package: pamixer 
     purpose: PulseAudio cli mixer

@@ -57,3 +57,6 @@ post_install:
 
     # EXTRAS
     # autotiling https://github.com/nwg-piotr/autotiling
+
+remove:
+  - foot

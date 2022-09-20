@@ -12,8 +12,12 @@ packages:
     purpose: screen sharing
   - package: wf-recorder
   - python3-i3ipc
-  - package: dunst
-    purpose: notification daemons
+  # - package: dunst
+  #   purpose: notification daemons
+  - package: SwayNotificationCenter 
+    purpose: Notificaton manager
+    repository: erikreider/SwayNotificationCenter
+
   - jq
   - wofi
   - grim
@@ -32,6 +36,7 @@ packages:
   # - package: vulkan-validation-layers
   #   purpose: WLR_RENDERER=vulkan sway
   - waybar
+  - libappindicator
   - package: wlsunset
     purpose: Day/night gamma adjustments for Wayland compositors
   - blueman
@@ -46,9 +51,12 @@ packages:
   - package: lxpolkit
     purpose: temp solution for polkit
 
+  - package: wev
+    purpose: Keybind finder
 
 post_install:
   run:
+    - sudo flatpak override --env=QT_QPA_PLATFORM="xcb" com.ulduzsoft.Birdtray
     # - dot update-index --assume-unchanged ~/.config/sway/config
     # - |
     #     Add to '/etc/pam.d/swaylock' for better fingerprint scanner support

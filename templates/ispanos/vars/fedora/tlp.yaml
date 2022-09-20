@@ -1,0 +1,14 @@
+---
+packages:
+  - tlp
+  - tlp-rdw
+  - package: com.github.d4nj1.tlpui
+    manager: flatpak
+
+post_install:
+  run:
+  - sudo systemctl enable tlp.service
+  - sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
+
+remove:
+  - power-profiles-daemon

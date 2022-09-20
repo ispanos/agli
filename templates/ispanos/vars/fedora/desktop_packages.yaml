@@ -7,6 +7,7 @@ packages:
     gstreamer1-libav
     --exclude=gstreamer1-plugins-bad-free-devel \
   - lame\* --exclude=lame-devel
+  - libva-utils
   - alacritty
   - dropbox
   - nautilus-dropbox

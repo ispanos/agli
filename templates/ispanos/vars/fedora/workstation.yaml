@@ -44,6 +44,8 @@ packages:
   - package: ShellCheck
   - package: sqlitebrowser
   - package: texlive-scheme-basic
+  - package: latexmk
+    purpose: latex make
   # - package: timeshift
   #   purpose: Backups
   # - package: w3m

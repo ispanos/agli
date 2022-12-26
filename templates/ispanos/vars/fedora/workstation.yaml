@@ -46,6 +46,8 @@ packages:
   - package: texlive-scheme-basic
   - package: latexmk
     purpose: latex make
+  - package: calibre
+    purpose: e-pub reader
   # - package: timeshift
   #   purpose: Backups
   # - package: w3m

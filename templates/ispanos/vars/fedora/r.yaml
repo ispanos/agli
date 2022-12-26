@@ -48,6 +48,9 @@ packages:
   - package: R-CRAN-digest
     purpose: R in Jupyter notebook
 
+  - package: R-CRAN-DynareR
+    purpose: "A Seamless Integration of 'R' and 'Dynare'"
+
   # Cran packages for R
   - R-CRAN-MASS
   - R-CRAN-Matrix

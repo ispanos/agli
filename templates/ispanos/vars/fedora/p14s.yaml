@@ -2,3 +2,7 @@
 packages:
   - akmod-nvidia
   - xorg-x11-drv-nvidia-cuda
+
+post_install:
+  run:
+   - sudo grubby --args="iommu=pt" --update-kernel=ALL

@@ -40,9 +40,6 @@ packages:
   - package: wlsunset
     purpose: Day/night gamma adjustments for Wayland compositors
   - blueman
-  - package: pamixer 
-    purpose: PulseAudio cli mixer
-    repository: linuxredneck/pamixer
   - package: playerctl
     purpose: media control
   - package: xsettingsd

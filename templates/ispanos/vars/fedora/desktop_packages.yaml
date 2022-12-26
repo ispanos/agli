@@ -58,9 +58,12 @@ packages:
     manager: flatpak
   - package: org.signal.Signal
     manager: flatpak
-  - package: com.microsoft.Teams
-    manager: flatpak
-  - package: us.zoom.Zoom
+
+  # - package: com.microsoft.Teams
+  #   manager: flatpak
+  # - package: us.zoom.Zoom
+  #   manager: flatpak
+  - package: com.github.tchx84.Flatseal
     manager: flatpak
   - package: com.discordapp.Discord
     manager: flatpak

@@ -58,6 +58,9 @@ packages:
   - R-CRAN-modopt.matlab
   - R-CRAN-plm
   - R-CRAN-Hmisc
+  - R-CRAN-readstata13
+  - R-CRAN-splitstackshape 
+  - R-CRAN-statar
 
   - R-CRAN-MASS
   - R-CRAN-Matrix

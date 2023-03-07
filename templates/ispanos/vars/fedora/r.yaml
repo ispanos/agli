@@ -1,6 +1,7 @@
 ---
 # ~ 269 M + 105M for rsrudio
 packages:
+  ## R-CRAN-glmnetr
   - package: R
 
   - package: R-CoprManager
@@ -21,7 +22,7 @@ packages:
   - package: R-CRAN-dplyr
     purpose: Provides "%>%"
 
-  - package: R-CRAN-languageserver 
+  - package: R-CRAN-languageserver
     purpose: Vscode-R
   - package: R-CRAN-httpgd
     purpose: Vscode-R
@@ -52,6 +53,12 @@ packages:
     purpose: "A Seamless Integration of 'R' and 'Dynare'"
 
   # Cran packages for R
+
+  - R-CRAN-R.matlab
+  - R-CRAN-modopt.matlab
+  - R-CRAN-plm
+  - R-CRAN-Hmisc
+
   - R-CRAN-MASS
   - R-CRAN-Matrix
   - R-CRAN-MatrixModels

@@ -1,6 +1,11 @@
 ---
 packages:
   - firewall-config
+
+  - package: org.gnome.SoundRecorder
+    manager: flatpak
+
+  # Media libraries
   - >
     gstreamer1-plugins-{bad-\*,good-\*,base}
     gstreamer1-plugin-openh264
@@ -59,8 +64,6 @@ packages:
   - package: org.signal.Signal
     manager: flatpak
 
-  # - package: com.microsoft.Teams
-  #   manager: flatpak
   # - package: us.zoom.Zoom
   #   manager: flatpak
   - package: com.github.tchx84.Flatseal

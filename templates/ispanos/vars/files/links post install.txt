@@ -1,0 +1,19 @@
+# MANUALLY
+
+ln -s Dropbox/Videos .
+ln -s Dropbox/Documents .
+ln -s Dropbox/Pictures .
+ln -s Dropbox/Media\ Library/Music .
+ln -s ~/Dropbox/Programs/btoggle ~/.local/bin
+ln -s .profile .zprofile
+ln -sf /opt/intel/oneapi/compiler/latest/linux/bin/intel64/ifort ~/.local/bin
+
+# TODO replaced with the latetst matlab version
+ln -s /home/yiannis/.local/MATLAB/R2018a/bin/matlab ~/.local/bin
+ln -s /home/yiannis/.local/MATLAB/R2018a/bin/mbuild ~/.local/bin
+ln -s /home/yiannis/.local/MATLAB/R2018a/bin/glnxa64/mlint ~/.local/bin
+
+cp "/home/yiannis/Dropbox/Programs/Matlabs/MathWorks MATLAB R2018a Linux/matlab.desktop" ~/.local/share/applications
+cp "/home/yiannis/Dropbox/Programs/stata/stata14.desktop" ~/.local/share/applications
+update-desktop-database ~/.local/share/applications
+

@@ -10,16 +10,16 @@ prerequisite_packages:
 include:
   - vars/fedora/base_packages.yaml
   - vars/fedora/desktop_packages.yaml
-  # - vars/fedora/dnf_config.yaml
+  - vars/fedora/dnf_config.yaml
   # - vars/fedora/docker.yaml
   # - vars/fedora/existing_packages.yaml
   # - vars/fedora/games.yaml
   # - vars/fedora/grib_packages.yaml
   # - vars/fedora/ifort.yaml
-  # - vars/fedora/p14s.yaml
+  - vars/fedora/p14s.yaml
   # - vars/fedora/htpc.yaml
-  # - vars/fedora/r.yaml
-  # - vars/fedora/stata.yaml
+  - vars/fedora/r.yaml
+  - vars/fedora/stata.yaml
   - vars/fedora/sway.yaml
   - vars/fedora/workstation.yaml
 

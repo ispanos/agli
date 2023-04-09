@@ -12,14 +12,14 @@ packages:
     purpose: screen sharing
   - package: wf-recorder
   - python3-i3ipc
-  - package: SwayNotificationCenter 
+  - package: SwayNotificationCenter
     purpose: Notificaton manager
     repository: erikreider/SwayNotificationCenter
 
   - jq
   - wofi
   - grim
-  - packages: slurp
+  - package: slurp
     purpose: region-screenshot utility for Wayland
   - pavucontrol
   - package: brightnessctl

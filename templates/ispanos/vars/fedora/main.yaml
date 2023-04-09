@@ -17,11 +17,10 @@ include:
   # - vars/fedora/grib_packages.yaml
   # - vars/fedora/ifort.yaml
   # - vars/fedora/p14s.yaml
-  # - vars/fedora/htpc.yaml
-  # - vars/fedora/r.yaml
-  # - vars/fedora/stata.yaml
-  # - vars/fedora/sway.yaml
-  # - vars/fedora/workstation.yaml
+  - vars/fedora/r.yaml
+  - vars/fedora/stata.yaml
+  - vars/fedora/sway.yaml
+  - vars/fedora/workstation.yaml
 
 remove:
   - gnome-boxes

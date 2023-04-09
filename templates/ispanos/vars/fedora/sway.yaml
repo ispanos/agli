@@ -1,5 +1,4 @@
 ---
-
 packages:
   - sway
   - package: swaylock
@@ -52,8 +51,8 @@ packages:
 post_install:
   run:
     - sudo usermod -a -G input {current_user}
-    # - sudo install -Dm755 sway-ptinopedila.sh /usr/local/bin/sway-ptinopedila
-    # - sudo install -Dm644 "sway-ptinopedila.desktop" "/usr/share/wayland-sessions/sway-ptinopedila.desktop"
+    - sudo install -Dm755 vars/files/sway/sway-ptinopedila.sh /usr/local/bin/sway-ptinopedila
+    - sudo install -Dm644 vars/files/sway/sway-ptinopedila.desktop /usr/share/wayland-sessions/sway-ptinopedila.desktop
     # - sudo flatpak override --env=QT_QPA_PLATFORM="xcb" com.ulduzsoft.Birdtray
     # - dot update-index --assume-unchanged ~/.config/sway/config
     # - |

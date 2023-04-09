@@ -47,7 +47,7 @@ export MOZ_ENABLE_WAYLAND=1
 export MOZ_USE_XINPUT2=1
 
 # noscanout fixes this issue: https://www.reddit.com/r/swaywm/comments/wiq06i/games_have_lines_on_screen_when_fullscreen_on/
-# exec sway  -D noscanout "$@"
+# exec sway -D noscanout "$@"
 lspci -k | sgrep -A 2 -E "(VGA|3D)" | grep -q "NVIDIA" &&
 exec sway --unsupported-gpu "$@"
 

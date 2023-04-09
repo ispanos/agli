@@ -12,8 +12,6 @@ packages:
     purpose: screen sharing
   - package: wf-recorder
   - python3-i3ipc
-  # - package: dunst
-  #   purpose: notification daemons
   - package: SwayNotificationCenter 
     purpose: Notificaton manager
     repository: erikreider/SwayNotificationCenter
@@ -53,7 +51,10 @@ packages:
 
 post_install:
   run:
-    - sudo flatpak override --env=QT_QPA_PLATFORM="xcb" com.ulduzsoft.Birdtray
+    - sudo usermod -a -G input {current_user}
+    # - sudo install -Dm755 sway-ptinopedila.sh /usr/local/bin/sway-ptinopedila
+    # - sudo install -Dm644 "sway-ptinopedila.desktop" "/usr/share/wayland-sessions/sway-ptinopedila.desktop"
+    # - sudo flatpak override --env=QT_QPA_PLATFORM="xcb" com.ulduzsoft.Birdtray
     # - dot update-index --assume-unchanged ~/.config/sway/config
     # - |
     #     Add to '/etc/pam.d/swaylock' for better fingerprint scanner support

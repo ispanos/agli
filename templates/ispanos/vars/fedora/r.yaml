@@ -1,5 +1,4 @@
 ---
-# ~ 269 M + 105M for rsrudio
 packages:
   ## R-CRAN-glmnetr
   - package: R
@@ -52,6 +51,8 @@ packages:
   - package: R-CRAN-DynareR
     purpose: "A Seamless Integration of 'R' and 'Dynare'"
 
+  - package: R-CRAN-astsa
+    purpose: "acf2"
   # Cran packages for R
 
   - R-CRAN-R.matlab

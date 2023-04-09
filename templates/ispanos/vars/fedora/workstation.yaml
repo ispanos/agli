@@ -21,7 +21,7 @@ packages:
   - package: cmake
   - package: dialog
   - package: fd-find
-  # - package: fzf
+  - package: fzf
   - package: jq
   - package: nmap
   - package: npm
@@ -48,8 +48,6 @@ packages:
     purpose: latex make
   - package: calibre
     purpose: e-pub reader
-  # - package: timeshift
-  #   purpose: Backups
   # - package: w3m
 
   # - package: io.dbeaver.DBeaverCommunity

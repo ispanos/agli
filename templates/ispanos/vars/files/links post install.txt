@@ -16,4 +16,3 @@ ln -s /home/yiannis/.local/MATLAB/R2018a/bin/glnxa64/mlint ~/.local/bin
 cp "/home/yiannis/Dropbox/Programs/Matlabs/MathWorks MATLAB R2018a Linux/matlab.desktop" ~/.local/share/applications
 cp "/home/yiannis/Dropbox/Programs/stata/stata14.desktop" ~/.local/share/applications
 update-desktop-database ~/.local/share/applications
-

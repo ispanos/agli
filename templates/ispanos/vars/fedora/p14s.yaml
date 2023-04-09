@@ -5,6 +5,5 @@ packages:
 
 post_install:
   run:
-   - sudo grubby --args="iommu=pt" --update-kernel=ALL
-   - sudo grubby --args="iommu=pt" --update-kernel=ALL
-   - ln -s /sys/class/hwmon/hwmon7/temp1_input ~/.local/share/cpu_temp
+   # - sudo grubby --args="iommu=pt" --update-kernel=ALL
+   # - ln -s /sys/class/hwmon/hwmon7/temp1_input ~/.local/share/cpu_temp

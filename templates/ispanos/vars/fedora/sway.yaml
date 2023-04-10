@@ -53,6 +53,12 @@ post_install:
     - sudo usermod -a -G input {current_user}
     - sudo install -Dm755 vars/files/sway/sway-ptinopedila.sh /usr/local/bin/sway-ptinopedila
     - sudo install -Dm644 vars/files/sway/sway-ptinopedila.desktop /usr/share/wayland-sessions/sway-ptinopedila.desktop
+    - systemctl --user start lock.target
+    - systemctl --user enable lock-sway.service
+    - systemctl --user enable lock-helper.service
+    - systemctl --user enable pause-media.service
+    - systemctl --user enable sway.service
+    - systemctl --user enable unlock-swaylock.service
     # - sudo flatpak override --env=QT_QPA_PLATFORM="xcb" com.ulduzsoft.Birdtray
     # - dot update-index --assume-unchanged ~/.config/sway/config
     # - |

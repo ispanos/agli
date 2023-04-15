@@ -55,6 +55,12 @@ packages:
     purpose: "acf2"
   # Cran packages for R
 
+
+  - package: R-CRAN-tsoutliers
+    purpose: "Time-series outliers"
+  - package: R-CRAN-seastests
+    purpose: "Time-series combined seasonality test."
+
   - R-CRAN-R.matlab
   - R-CRAN-modopt.matlab
   - R-CRAN-plm

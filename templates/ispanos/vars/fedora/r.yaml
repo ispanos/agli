@@ -66,8 +66,10 @@ packages:
   - R-CRAN-plm
   - R-CRAN-Hmisc
   - R-CRAN-readstata13
-  - R-CRAN-splitstackshape 
+  - R-CRAN-splitstackshape
   - R-CRAN-statar
+  - R-CRAN-eurostat
+  - R-CRAN-tempdisagg
 
   - R-CRAN-MASS
   - R-CRAN-Matrix

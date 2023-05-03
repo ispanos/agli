@@ -44,6 +44,9 @@ packages:
   - package: ShellCheck
   - package: sqlitebrowser
   - package: texlive-scheme-basic
+  - package: texlive-import
+  - package: texlive-adjustbox
+  - package: texlive-appendix
   - package: latexmk
     purpose: latex make
   - package: calibre

@@ -2,6 +2,7 @@ packages:
   - package: libnsl
     purpose: This package provides the legacy version of libnsl library, for accessing NIS services.
 
+  # TODO
   # # Not sure if needed:
   # - package: libX11-devel
   # - package: libXext-devel
@@ -16,4 +17,3 @@ packages:
 
   # # NOT NEEDED
   # - package: java-1.8.0-openjdk
-

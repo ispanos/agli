@@ -1,0 +1,41 @@
+packages:
+
+  - gcc
+  - gcc-g++
+  - gfortran
+  - boost-devel
+  - gsl-devel
+  - lapack
+  - lapack-devel
+  - matio-devel
+  - openblas
+  - openblas-devel
+  - suitesparse-devel
+  - bison
+  - flex
+  - make
+  - autoconf
+  - automake
+  - redhat-rpm-config
+
+
+  - octave
+  - octave-devel
+  - octave-statistics
+  - octave-io
+  - octave-optim
+  - octave-control
+
+
+  - texlive-scheme-minimal
+  - texlive-collection-publishers
+  - texlive-collection-latexextra
+  - texlive-collection-fontsextra
+  - texlive-collection-latexrecommended
+  - texlive-collection-science
+  - texlive-collection-plaingeneric
+  - texlive-lm
+  - python3-sphinx
+  - latexmk
+  - mathjax
+  - doxygen

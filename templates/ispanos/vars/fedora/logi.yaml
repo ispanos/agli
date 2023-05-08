@@ -1,5 +1,7 @@
 ---
 pre_install:
+  run:
+    - sudo mkdir -p /etc/g810-led
   files:
     - path: "/etc/g810-led/profile"
       content: |

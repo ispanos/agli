@@ -1,0 +1,19 @@
+packages:
+  - package: libnsl
+    purpose: This package provides the legacy version of libnsl library, for accessing NIS services.
+
+  # # Not sure if needed:
+  # - package: libX11-devel
+  # - package: libXext-devel
+  # - package: libXtst-devel
+  # - package: libXmu-devel
+  # - package: libXi-devel
+  # - package: fontconfig
+  # - package: freetype
+  # - package: libva-vdpau-driver
+  # - package: libva-utils
+  # - package: vdpauinfo  
+
+  # # NOT NEEDED
+  # - package: java-1.8.0-openjdk
+

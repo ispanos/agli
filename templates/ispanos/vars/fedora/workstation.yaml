@@ -27,6 +27,7 @@ packages:
   - package: npm
   - package: obs-studio
   - package: odt2txt
+
   - package: python3-autopep8
   - package: python3-matplotlib
   - package: python3-numpy
@@ -35,6 +36,9 @@ packages:
   - package: python3-pylint
   - package: python3-seaborn
   - package: python3-pyyaml
+  - package: python3-sphinx
+    purpose: "Python documentation generator"
+
   - package: pdftk-java
     purpose: Editing pdf files
   - package: qpdf
@@ -43,15 +47,10 @@ packages:
     purpose: RDP and VNC client
   - package: ShellCheck
   - package: sqlitebrowser
-  - package: texlive-scheme-basic
-  - package: texlive-import
-  - package: texlive-adjustbox
-  - package: texlive-appendix
-  - package: latexmk
-    purpose: latex make
   - package: calibre
     purpose: e-pub reader
-  # - package: w3m
+
+    # - package: w3m
 
   # - package: io.dbeaver.DBeaverCommunity
   #   manager: flatpak
@@ -71,8 +70,10 @@ packages:
   - package: com.anydesk.Anydesk
     manager: flatpak
 
-  - package: texlive-tex4ht
-    purpose: Provides `htlatex`
+  # TODO
+  # - package: gitkraken
+  #  manager: flatpak
+  # flatpak-spawn --host gnome-terminal %d # Terminal in flatpak version
 
 post_install:
   run:

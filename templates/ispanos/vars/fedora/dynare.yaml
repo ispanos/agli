@@ -1,5 +1,4 @@
 packages:
-
   - gcc
   - gcc-g++
   - gfortran
@@ -18,14 +17,12 @@ packages:
   - automake
   - redhat-rpm-config
 
-
   - octave
   - octave-devel
   - octave-statistics
   - octave-io
   - octave-optim
   - octave-control
-
 
   - texlive-scheme-minimal
   - texlive-collection-publishers

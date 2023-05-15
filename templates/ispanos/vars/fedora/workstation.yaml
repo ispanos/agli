@@ -12,21 +12,35 @@ pre_install:
 
 packages:
   - "@virtualization"
+
+  - package: com.anydesk.Anydesk
+    manager: flatpak
+  - package: remmina
+    purpose: RDP and VNC client
+
+  - package: md.obsidian.Obsidian
+    purpose: A knowledge base that works on local Markdown files.
+    manager: flatpak
+
   - package: gnome-commander
     purpose: A more powerful file manager
 
-  - package: code
-    purpose: IDE
+  - package: obs-studio
+
+  - package: git-lfs
+    purpose: Replaces large files with text pointers inside Git, while storing the file contents on a remote server.
 
   - package: cmake
+  - package: code
+    purpose: IDE
   - package: dialog
   - package: fd-find
   - package: fzf
   - package: jq
   - package: nmap
   - package: npm
-  - package: obs-studio
-  - package: odt2txt
+  - package: ShellCheck
+  - package: sqlitebrowser
 
   - package: python3-autopep8
   - package: python3-matplotlib
@@ -37,42 +51,29 @@ packages:
   - package: python3-seaborn
   - package: python3-pyyaml
   - package: python3-sphinx
-    purpose: "Python documentation generator"
+    purpose: Python documentation generator
 
+  - package: odt2txt
   - package: pdftk-java
     purpose: Editing pdf files
   - package: qpdf
     purpose: Editing pdf files
-  - package: remmina
-    purpose: RDP and VNC client
-  - package: ShellCheck
-  - package: sqlitebrowser
   - package: calibre
     purpose: e-pub reader
 
-    # - package: w3m
+  - package: gretl
+    purpose: Econometrics analysis package
+
+  # - package: w3m
 
   # - package: io.dbeaver.DBeaverCommunity
   #   manager: flatpak
   # - package: io.dbeaver.DBeaverCommunity.Client.mariadb
   #   manager: flatpak
 
-  - package: gretl
-    purpose: Econometrics analysis package
-
-  - package: octave
-    purpose: A high-level language for numerical computations
-
-  - package: md.obsidian.Obsidian
-    purpose: A knowledge base that works on local Markdown files.
-    manager: flatpak
-
-  - package: com.anydesk.Anydesk
-    manager: flatpak
-
   # TODO
   # - package: gitkraken
-  #  manager: flatpak
+  #   manager: flatpak
   # flatpak-spawn --host gnome-terminal %d # Terminal in flatpak version
 
 post_install:

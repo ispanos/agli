@@ -1,6 +1,6 @@
 ---
 packages:
-  - sway
+  - package: sway
   - package: swaylock
     purpose: is a screen locker for Wayland
   - package: swayidle
@@ -10,33 +10,33 @@ packages:
   - package: xdg-desktop-portal-wlr xdg-desktop-portal
     purpose: screen sharing
   - package: wf-recorder
-  - python3-i3ipc
+  - package: python3-i3ipc
   - package: SwayNotificationCenter
     purpose: Notificaton manager
     repository: erikreider/SwayNotificationCenter
 
-  - jq
-  - wofi
-  - grim
+  - package: jq
+  - package: wofi
+  - package: grim
   - package: slurp
     purpose: region-screenshot utility for Wayland
-  - pavucontrol
+  - package: pavucontrol
   - package: brightnessctl
     purpose: laptop brightness control
   - package: wdisplays
     purpose: GUI display configurator for wlroots compositors
-  - network-manager-applet
+  - package: network-manager-applet
   - package: wl-clipboard
     purpose: clipboard utility
   - package: clipman
     purpose: clipboard utility
   # - package: vulkan-validation-layers
   #   purpose: WLR_RENDERER=vulkan sway
-  - waybar
-  - libappindicator
+  - package: waybar
+  - package: libappindicator
   - package: wlsunset
     purpose: Day/night gamma adjustments for Wayland compositors
-  - blueman
+  - package: blueman
   - package: playerctl
     purpose: media control
   - package: xsettingsd
@@ -53,18 +53,13 @@ post_install:
     - sudo usermod -a -G input {current_user}
     - sudo install -Dm755 vars/files/sway/sway-ptinopedila.sh /usr/local/bin/sway-ptinopedila
     - sudo install -Dm644 vars/files/sway/sway-ptinopedila.desktop /usr/share/wayland-sessions/sway-ptinopedila.desktop
-    - systemctl --user start lock.target
-    - systemctl --user enable lock-sway.service
-    - systemctl --user enable lock-helper.service
-    - systemctl --user enable pause-media.service
-    - systemctl --user enable sway.service
-    - systemctl --user enable unlock-swaylock.service
+    - cd /home/{current_user}/.config/systemd/user && systemctl --user enable *
     # - sudo flatpak override --env=QT_QPA_PLATFORM="xcb" com.ulduzsoft.Birdtray
     # - dot update-index --assume-unchanged ~/.config/sway/config
     # - |
-    #     Add to '/etc/pam.d/swaylock' for better fingerprint scanner support
-    #     auth            sufficient      pam_unix.so try_first_pass likeauth nullok
-    #     auth            sufficient      pam_fprintd.so
+    #     Add to '/etc/pam.d/swaylock' (top) for better fingerprint scanner support
+    #     auth sufficient pam_unix.so try_first_pass likeauth nullok
+    #     auth sufficient pam_fprintd.so
 
     # EXTRAS
     # autotiling https://github.com/nwg-piotr/autotiling

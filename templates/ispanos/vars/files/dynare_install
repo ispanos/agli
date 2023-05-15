@@ -1,7 +1,12 @@
 #!/bin/bash
 
-## SEE https://forum.dynare.org/t/compiling-and-running-dynare-on-a-linux-cluster-running-centos-or-rhel/18039
-## SEE https://mutschler.dev/linux/fedora-post-install/#coding
+## See 
+## - https://forum.dynare.org/t/compiling-and-running-dynare-on-a-linux-cluster-running-centos-or-rhel/18039
+## - https://mutschler.dev/linux/fedora-post-install/#coding
+## - https://mutschler.eu/dynare/
+## - https://mutschler.eu/dynare/intro-dsge-dynare/
+## - https://forum.dynare.org/t/building-best-version-for-fedora-centos/10552/5
+## - https://forum.dynare.org/t/linux-centos-preprocessor-command-not-found/17444/3
 
 MATLAB_DIR=/home/$USER/.local/MATLAB/R2018a
 DYNARE_DIR=/home/$USER/.local/dynare
@@ -29,30 +34,9 @@ make -f makefile.gf FFLAGS="-O2 -std=legacy" PROGRAM=x13as
 mkdir -p /home/$USER/.local/bin
 ln -s $DYNARE_DIR/x13as/x13as /home/$USER/.local/bin/x13as
 
-git clone --recurse-submodules --single-branch --branch 4.6 https://git.dynare.org/dynare/dynare.git $DYNARE_DIR/stable-4.6
-cd $DYNARE_DIR/stable-4.6
+git clone --recurse-submodules --single-branch --branch master https://git.dynare.org/dynare/dynare.git $DYNARE_DIR/unstable
+cd $DYNARE_DIR/unstable
 autoreconf -si
-
-## SEE NOTE
-./configure --with-slicot=$DYNARE_DIR/slicot --with-matlab=$MATLAB_DIR MATLAB_VERSION=R2018a --disable-octave
-
-make -j$(($(nproc)+1)) #rule of thumb: one more than CPUs as shown by e.g. lscpu, better check 
-
-
-
-# git clone --recurse-submodules --single-branch --branch master https://git.dynare.org/dynare/dynare.git $DYNARE_DIR/unstable
-# cd $DYNARE_DIR/unstable
-# autoreconf -si
-# ./configure --with-slicot=$DYNARE_DIR/slicot --with-matlab=$MATLAB_DIR
-# make -j$(($(nproc)+1)) #rule of thumb: one more than CPUs as shown by e.g. lscpu, better check 
-
-
-## NOTE
-
-# Not working
-# Was:
-# ./configure --with-slicot=$DYNARE_DIR/slicot --with-matlab=$MATLAB_DIR MATLAB_VERSION=R2020b LDFLAGS="-L/usr/lib64 -L/usr/lib/octave/5.2.0"
-# Tried:
 # ./configure --with-slicot=$DYNARE_DIR/slicot --with-matlab=$MATLAB_DIR MATLAB_VERSION=R2018a LDFLAGS="-L/usr/lib64 -L/usr/lib64/octave/7.3.0"
-
-# Worked with --disable-octave
+./configure --with-slicot=$DYNARE_DIR/slicot --disable-matlab LDFLAGS="-L/usr/lib64 -L/usr/lib64/octave/7.3.0"
+make -j$(($(nproc)+1))

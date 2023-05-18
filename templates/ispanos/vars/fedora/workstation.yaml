@@ -52,6 +52,8 @@ packages:
   - package: python3-pyyaml
   - package: python3-sphinx
     purpose: Python documentation generator
+  - package: python3-nbconvert
+    purpose: Converting Jupyter Notebooks - requires pandoc
 
   - package: odt2txt
   - package: pdftk-java

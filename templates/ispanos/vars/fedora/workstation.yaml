@@ -55,6 +55,8 @@ packages:
   - package: python3-nbconvert
     purpose: Converting Jupyter Notebooks - requires pandoc
 
+  - yamllint
+
   - package: odt2txt
   - package: pdftk-java
     purpose: Editing pdf files
@@ -66,17 +68,17 @@ packages:
   - package: gretl
     purpose: Econometrics analysis package
 
-  # - package: w3m
+    # - package: w3m
 
-  # - package: io.dbeaver.DBeaverCommunity
-  #   manager: flatpak
-  # - package: io.dbeaver.DBeaverCommunity.Client.mariadb
-  #   manager: flatpak
+    # - package: io.dbeaver.DBeaverCommunity
+    #   manager: flatpak
+    # - package: io.dbeaver.DBeaverCommunity.Client.mariadb
+    #   manager: flatpak
 
-  # TODO
-  # - package: gitkraken
-  #   manager: flatpak
-  # flatpak-spawn --host gnome-terminal %d # Terminal in flatpak version
+    # TODO
+    # - package: gitkraken
+    #   manager: flatpak
+    # flatpak-spawn --host gnome-terminal %d # Terminal in flatpak version
 
 post_install:
   run:

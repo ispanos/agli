@@ -1,3 +1,4 @@
+---
 packages:
   - package: texlive-scheme-basic
   - package: texlive-import

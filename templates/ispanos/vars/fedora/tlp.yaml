@@ -7,8 +7,8 @@ packages:
 
 post_install:
   run:
-  - sudo systemctl enable tlp.service
-  - sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
+    - sudo systemctl enable tlp.service
+    - sudo systemctl mask systemd-rfkill.service systemd-rfkill.socket
 
 remove:
   - power-profiles-daemon

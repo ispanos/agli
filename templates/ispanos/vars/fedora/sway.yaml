@@ -42,8 +42,8 @@ packages:
   - package: xsettingsd
     purpose: Xwayland gtk settings
 
-  - package: lxpolkit
-    purpose: temp solution for polkit
+  - package: polkit-gnome
+    purpose: Polkit authentication that works well with fingerprint
 
   - package: wev
     purpose: Keybind finder

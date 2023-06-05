@@ -29,7 +29,8 @@ packages:
   - audacity
   - gimp
   - gcolor3
-  - gthumb
+  - package: org.gnome.gThumb
+    manager: flatpak
   - mpv
 
   - package: org.gnome.gitlab.YaLTeR.VideoTrimmer
@@ -37,7 +38,8 @@ packages:
   - package: org.gnome.SoundRecorder
     manager: flatpak
 
-  - transmission
+  - package: com.transmissionbt.Transmission
+    manager: flatpak
   - package: com.stremio.Stremio
     manager: flatpak
   - package: org.signal.Signal
@@ -76,7 +78,3 @@ post_install:
   run:
     # - sudo dnf install -y --setopt=install_weak_deps=False
     - sudo dnf group upgrade --with-optional Multimedia -y
-    # - |
-    #   # nautilus-open-any-terminal
-    #   glib-compile-schemas ~/.local/share/glib-2.0/schemas/
-    #   gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty

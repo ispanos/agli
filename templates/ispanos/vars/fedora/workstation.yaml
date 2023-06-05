@@ -15,8 +15,9 @@ packages:
   - spice-gtk
   - package: com.anydesk.Anydesk
     manager: flatpak
-  - package: remmina
+  - package: org.remmina.Remmina
     purpose: RDP and VNC client
+    manager: flatpak
 
   - package: md.obsidian.Obsidian
     purpose: A knowledge base that works on local Markdown files.
@@ -27,15 +28,15 @@ packages:
 
   - package: obs-studio
 
-  - package: git-lfs
-    purpose: Replaces large files with text pointers inside Git, while storing the file contents on a remote server.
-
-  - package: cmake
   - package: code
     purpose: IDE
+
+  - package: cmake
   - package: dialog
   - package: fd-find
   - package: fzf
+  - package: git-lfs
+    purpose: Replaces large files with text pointers inside Git, while storing the file contents on a remote server.
   - package: jq
   - package: nmap
   - package: npm
@@ -62,11 +63,13 @@ packages:
     purpose: Editing pdf files
   - package: qpdf
     purpose: Editing pdf files
-  - package: calibre
-    purpose: e-pub reader
 
-  - package: gretl
-    purpose: Econometrics analysis package
+  - package: com.calibre_ebook.calibre
+    purpose: e-pub reader
+    manager: flatpak
+
+    # - package: gretl
+    #   purpose: Econometrics analysis package
 
     # - package: w3m
 

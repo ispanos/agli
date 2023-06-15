@@ -213,3 +213,6 @@ packages:
   - R-CRAN-tmvnsim
   - R-CRAN-tsDyn
   - R-CRAN-vars
+  - R-CRAN-glmnet
+  - R-CRAN-pls
+  

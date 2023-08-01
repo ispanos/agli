@@ -1,5 +1,9 @@
 ---
 packages:
+
+  - package: playerctl
+    purpose: media control
+
   - firewall-config
 
   - alacritty
@@ -73,6 +77,9 @@ packages:
     --exclude=gstreamer1-plugins-bad-free-devel \
   - lame\* --exclude=lame-devel
   - libva-utils
+
+  - package: hu.irl.cameractrls
+    manager: flatpak
 
 post_install:
   run:

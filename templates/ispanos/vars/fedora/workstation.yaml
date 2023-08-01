@@ -13,6 +13,8 @@ pre_install:
 packages:
   - "@virtualization"
   - spice-gtk
+  - package: corectrl
+    purpose: Gui util for GPU and CPU power profiles
   - package: com.anydesk.Anydesk
     manager: flatpak
   - package: org.remmina.Remmina
@@ -21,6 +23,8 @@ packages:
 
   - package: md.obsidian.Obsidian
     purpose: A knowledge base that works on local Markdown files.
+    manager: flatpak
+  - package: org.zotero.Zotero
     manager: flatpak
 
   - package: gnome-commander

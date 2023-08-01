@@ -3,7 +3,8 @@ packages:
   # - package: nautilus-python
   # - package: nautilus-open-any-terminal
   #   manager: pip
-
+  - package: playerctl
+    purpose: media control
   - package: gnome-shell-extension-caffeine
   - package: com.mattjakeman.ExtensionManager
     manager: flatpak

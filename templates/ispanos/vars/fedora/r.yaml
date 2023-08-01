@@ -215,4 +215,6 @@ packages:
   - R-CRAN-vars
   - R-CRAN-glmnet
   - R-CRAN-pls
-  
+  - R-CRAN-wooldridge
+  - R-CRAN-Metrics
+  - R-CRAN-fredr

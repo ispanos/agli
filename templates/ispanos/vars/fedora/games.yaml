@@ -3,3 +3,5 @@ packages:
   - wine
   - package: gperftools-libs
     purpose: Needed for CS:GO
+  - package: com.heroicgameslauncher.hgl
+    manager: flatpak

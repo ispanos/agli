@@ -15,13 +15,15 @@ pre_install:
         sudo localectl set-locale LC_MEASUREMENT=el_GR.UTF-8
         sudo localectl set-locale LC_TIME=en_GB.UTF-8
         sudo localectl set-locale LC_NUMERIC=en_US.UTF-8
-    - dconf load / < vars/files/dconf.ini
+    # - dconf load / < vars/files/dconf.ini # Moved to dotfiles repo.
 
 post_install:
   run:
     - chsh {current_user} -s /usr/bin/zsh
     - sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
+
+    # TODO: Add check - if file exists -
     - >
         /usr/bin/git --git-dir=/home/{current_user}/.cfg/
-        --work-tree=/home/{current_user}" update-index
+        --work-tree=/home/{current_user} update-index
         --assume-unchanged .config/sway/config

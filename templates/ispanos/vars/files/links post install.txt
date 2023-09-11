@@ -5,7 +5,6 @@ ln -s Dropbox/Videos .
 ln -s Dropbox/Documents .
 ln -s Dropbox/Pictures .
 ln -s Dropbox/Media_Library/Music .
-ln -s ~/Dropbox/Programs/btoggle ~/.local/bin
 ln -s .profile .zprofile
 ln -sf /opt/intel/oneapi/compiler/latest/linux/bin/intel64/ifort ~/.local/bin
 

@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Fix ownership and permissions of custon GNUPGHOME dir.
-
+# # Fix ownership and permissions of custon GNUPGHOME dir.
 # GNUPGHOME="~/.config/gnupg"
-
 # if [ ! -d "$GNUPGHOME" ]; then
 #     mkdir -p "$GNUPGHOME"
 #     chown -R "$(whoami)" "$GNUPGHOME"/
@@ -11,15 +9,9 @@
 #     find "$GNUPGHOME" -type d -exec chmod 700 {} \;
 # fi
 
-
-[ "$(command -v virtualbox)" ] && sudo usermod -aG vboxusers "$(whoami)"
-[ "$(command -v docker)" ] && sudo usermod -aG docker "$(whoami)"
-# [ "$(command -v sway)" ] &&
-#     sudo sed -i 's/^Exec=sway$/Exec=\/bin\/zsh -l -c sway/'
-#     /usr/share/wayland-sessions/sway.desktop
-systemctl enable --now libvirtd &&
-    usermod -aG libvirt "$(whoami)"
-
+[ "$(command -v virtualbox)" ]          && sudo usermod -aG vboxusers "$(whoami)"
+[ "$(command -v docker)" ]              && sudo usermod -aG docker "$(whoami)"
+sudo systemctl enable --now libvirtd    && sudo usermod -aG libvirt "$(whoami)"
 
 # sudo chmod 700 ~/.ssh
 # sudo chmod 644 ~/.ssh/key.pub

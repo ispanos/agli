@@ -2,8 +2,12 @@
 packages:
   - akmod-nvidia
   - xorg-x11-drv-nvidia-cuda
+  - powertop
 
 post_install:
   run:
-  # - sudo grubby --args="iommu=pt" --update-kernel=ALL
-  # - ln -s /sys/class/hwmon/hwmon7/temp1_input ~/.local/share/cpu_temp
+  - sudo grubby --args="iommu=pt" --update-kernel=ALL
+  - sudo grubby --args="intel_iommu=on" --update-kernel=ALL
+  - sudo install -Dm644 vars/files/nvidia-pm/80-nvidia-pm.rules /lib/udev/rules.d/80-nvidia-pm.rules
+  - sudo install -Dm755 vars/files/nvidia-pm/nvidia.conf /etc/modprobe.d/nvidia.conf
+  # http://us.download.nvidia.com/XFree86/Linux-x86_64/535.43.02/README/dynamicpowermanagement.html

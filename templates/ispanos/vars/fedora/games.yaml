@@ -5,3 +5,8 @@ packages:
     purpose: Needed for CS:GO
   - package: com.heroicgameslauncher.hgl
     manager: flatpak
+
+  - package: xpadneo
+    purpose: Xbox one controller driver
+    repository: sentry/xpadneo
+    # https://atar-axis.github.io/xpadneo/

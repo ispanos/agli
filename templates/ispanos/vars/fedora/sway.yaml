@@ -42,6 +42,13 @@ packages:
   - package: xsettingsd
     purpose: Xwayland gtk settings
 
+
+  - nautilus-dropbox
+  - file-roller-nautilus
+  - package: seahorse
+    purpose: graphical interface for managing and using encryption keys.
+  - seahorse-nautilus
+
   - package: polkit-gnome
     purpose: Polkit authentication that works well with fingerprint
 
@@ -53,16 +60,14 @@ post_install:
     - sudo usermod -a -G input {current_user}
     - sudo install -Dm755 vars/files/sway/sway-ptinopedila.sh /usr/local/bin/sway-ptinopedila
     - sudo install -Dm644 vars/files/sway/sway-ptinopedila.desktop /usr/share/wayland-sessions/sway-ptinopedila.desktop
-    - cd /home/{current_user}/.config/systemd/user && systemctl --user enable *
-    # - sudo flatpak override --env=QT_QPA_PLATFORM="xcb" com.ulduzsoft.Birdtray
-    # - dot update-index --assume-unchanged ~/.config/sway/config
-    # - |
-    #     Add to '/etc/pam.d/swaylock' (top) for better fingerprint scanner support
-    #     auth sufficient pam_unix.so try_first_pass likeauth nullok
-    #     auth sufficient pam_fprintd.so
-
-    # EXTRAS
-    # autotiling https://github.com/nwg-piotr/autotiling
+    - systemctl --user enable /home/{current_user}/.config/systemd/user/*.target /home/{current_user}/.config/systemd/user/*.service
+    - >
+      curl -L "https://github.com/nwg-piotr/autotiling/raw/master/autotiling/main.py"
+           -o "/home/{current_user}/.local/bin/wm-scripts/autotiling" && 
+      chmod +x "/home/{current_user}/.local/bin/wm-scripts/autotiling"
+    - >
+      sudo cp /etc/pam.d/swaylock /home/{current_user}/pam-swaylock.bak &&
+      sudo install -Dm644 vars/files/sway/pam-swaylock /etc/pam.d/swaylock
 
 remove:
   - foot

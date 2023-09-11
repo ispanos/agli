@@ -1,14 +1,10 @@
 ---
 packages:
 
-  - package: playerctl
-    purpose: media control
-
   - firewall-config
 
   - alacritty
   - dropbox
-  - nautilus-dropbox
 
   - package: xournalpp
     purpose: Handwriting
@@ -16,12 +12,6 @@ packages:
   - package: net.cozic.joplin_desktop
     purpose: Note taking application
     manager: flatpak
-
-  - package: seahorse
-    purpose: graphical interface for managing and using encryption keys.
-  - seahorse-nautilus
-
-  - file-roller-nautilus
 
   - google-chrome-stable
 
@@ -59,8 +49,6 @@ packages:
     manager: flatpak
   - package: com.spotify.Client
     manager: flatpak
-  - package: com.ulduzsoft.Birdtray
-    manager: flatpak
   - package: org.mozilla.Thunderbird
     manager: flatpak
 
@@ -68,6 +56,9 @@ packages:
   - zathura-djvu
   - zathura-pdf-mupdf
   - zathura-zsh-completion
+
+  - package: hu.irl.cameractrls
+    manager: flatpak
 
   # Media libraries
   - >
@@ -77,9 +68,6 @@ packages:
     --exclude=gstreamer1-plugins-bad-free-devel \
   - lame\* --exclude=lame-devel
   - libva-utils
-
-  - package: hu.irl.cameractrls
-    manager: flatpak
 
 post_install:
   run:

@@ -13,8 +13,8 @@ pre_install:
 packages:
   - "@virtualization"
   - spice-gtk
-  - package: corectrl
-    purpose: Gui util for GPU and CPU power profiles
+  # - hwloc-gui
+
   - package: com.anydesk.Anydesk
     manager: flatpak
   - package: org.remmina.Remmina
@@ -26,14 +26,27 @@ packages:
     manager: flatpak
   - package: org.zotero.Zotero
     manager: flatpak
+  - package: com.calibre_ebook.calibre
+    purpose: e-pub reader
+    manager: flatpak
 
   - package: gnome-commander
     purpose: A more powerful file manager
 
-  - package: obs-studio
+  - package: com.obsproject.Studio
+    manager: flatpak
+
+  - package: odt2txt
+  - package: pdftk-java
+    purpose: Editing pdf files
+  - package: qpdf
+    purpose: Editing pdf files
 
   - package: code
     purpose: IDE
+
+  - package: gitkraken
+    manager: flatpak
 
   - package: cmake
   - package: dialog
@@ -61,32 +74,9 @@ packages:
     purpose: Converting Jupyter Notebooks - requires pandoc
 
   - yamllint
-
-  - package: odt2txt
-  - package: pdftk-java
-    purpose: Editing pdf files
-  - package: qpdf
-    purpose: Editing pdf files
-
-  - package: com.calibre_ebook.calibre
-    purpose: e-pub reader
-    manager: flatpak
-
-    # - package: gretl
-    #   purpose: Econometrics analysis package
-
-    # - package: w3m
-
-    # - package: io.dbeaver.DBeaverCommunity
-    #   manager: flatpak
-    # - package: io.dbeaver.DBeaverCommunity.Client.mariadb
-    #   manager: flatpak
-
-    # TODO
-    # - package: gitkraken
-    #   manager: flatpak
-    # flatpak-spawn --host gnome-terminal %d # Terminal in flatpak version
+  # flatpak-spawn --host gnome-terminal %d # Terminal in flatpak version
 
 post_install:
   run:
     - sudo usermod -a -G libvirt {current_user}
+    - sudo grubby --args="iommu=pt" --update-kernel=ALL

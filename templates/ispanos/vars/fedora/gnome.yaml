@@ -11,6 +11,12 @@ packages:
   - gnome-shell-extension-gsconnect
   - gnome-tweaks
 
+  - nautilus-dropbox
+  - file-roller-nautilus
+  - package: seahorse
+    purpose: graphical interface for managing and using encryption keys.
+  - seahorse-nautilus
+
 post_install:
   run:
   # - |

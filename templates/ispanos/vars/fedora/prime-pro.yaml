@@ -1,0 +1,10 @@
+---
+packages:
+  - package: corectrl
+    purpose: Gui util for GPU and CPU power profiles
+
+post_install:
+  run:
+    - sudo grubby --args="iommu=pt" --update-kernel=ALL
+    - sudo grubby --args="amd_iommu=on" --update-kernel=ALL
+    - sudo grubby --args="kvm.ignore_msrs=1" --update-kernel=ALL

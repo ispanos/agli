@@ -2,6 +2,10 @@
 packages:
   - akmod-nvidia
   - xorg-x11-drv-nvidia-cuda
+  # - nvidia-vaapi-driver
+  - libva-nvidia-driver
+  - intel-gpu-tools
+  - intel-media-driver
   - powertop
 
 post_install:

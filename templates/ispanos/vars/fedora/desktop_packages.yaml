@@ -1,64 +1,21 @@
 ---
 packages:
-
-  - firewall-config
-
-  - alacritty
-  - dropbox
-
-  - package: xournalpp
-    purpose: Handwriting
-
-  - package: net.cozic.joplin_desktop
-    purpose: Note taking application
-    manager: flatpak
-
-  - google-chrome-stable
-
+  - package: firewall-config
+  - package: alacritty
+  - package: dropbox
+  - package: google-chrome-stable
   - package: alsa-tools
     purpose: Provides hdajackretask - Can disable unused audio cards
   - package: helvum
     purpose: Audio input-output connections using graph
-
-  - audacity
-  - gimp
-  - gcolor3
-  - package: org.gnome.gThumb
-    manager: flatpak
-  - mpv
-
-  - package: org.gnome.gitlab.YaLTeR.VideoTrimmer
-    manager: flatpak
-  - package: org.gnome.SoundRecorder
-    manager: flatpak
-
-  - package: com.transmissionbt.Transmission
-    manager: flatpak
-  - package: com.stremio.Stremio
-    manager: flatpak
-  - package: org.signal.Signal
-    manager: flatpak
-
-  # - package: us.zoom.Zoom
-  #   manager: flatpak
-  - package: com.github.tchx84.Flatseal
-    manager: flatpak
-  - package: com.discordapp.Discord
-    manager: flatpak
-  - package: com.skype.Client
-    manager: flatpak
-  - package: com.spotify.Client
-    manager: flatpak
-  - package: org.mozilla.Thunderbird
-    manager: flatpak
-
-  - zathura
-  - zathura-djvu
-  - zathura-pdf-mupdf
-  - zathura-zsh-completion
-
-  - package: hu.irl.cameractrls
-    manager: flatpak
+  - package: audacity
+  - package: gimp
+  - package: gcolor3
+  - package: mpv
+  - package: zathura
+  - package: zathura-djvu
+  - package: zathura-pdf-mupdf
+  - package: zathura-zsh-completion
 
   # Media libraries
   - >
@@ -69,7 +26,42 @@ packages:
   - lame\* --exclude=lame-devel
   - libva-utils
 
+  - package: com.github.tchx84.Flatseal
+    manager: flatpak
+  - package: com.github.xournalpp.xournalpp
+    purpose: Handwriting
+    manager: flatpak
+  - package: net.cozic.joplin_desktop
+    purpose: Note taking application
+    manager: flatpak
+  - package: org.gnome.gThumb
+    manager: flatpak
+  - package: com.obsproject.Studio
+    manager: flatpak
+  - package: org.gnome.gitlab.YaLTeR.VideoTrimmer
+    manager: flatpak
+  - package: org.gnome.SoundRecorder
+    manager: flatpak
+  - package: hu.irl.cameractrls
+    manager: flatpak
+  - package: com.transmissionbt.Transmission
+    manager: flatpak
+  - package: com.stremio.Stremio
+    manager: flatpak
+  - package: org.signal.Signal
+    manager: flatpak
+  - package: com.discordapp.Discord
+    manager: flatpak
+  - package: com.skype.Client
+    manager: flatpak
+  - package: com.spotify.Client
+    manager: flatpak
+  - package: org.mozilla.Thunderbird
+    manager: flatpak
+  # - package: us.zoom.Zoom
+  #   manager: flatpak
+
 post_install:
   run:
-    # - sudo dnf install -y --setopt=install_weak_deps=False
     - sudo dnf group upgrade --with-optional Multimedia -y
+    - sudo dnf groupupdate multimedia -y --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin

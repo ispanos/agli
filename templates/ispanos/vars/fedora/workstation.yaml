@@ -13,7 +13,6 @@ pre_install:
 packages:
   - "@virtualization"
   - spice-gtk
-  # - hwloc-gui
 
   - package: com.anydesk.Anydesk
     manager: flatpak
@@ -74,7 +73,6 @@ packages:
     purpose: Converting Jupyter Notebooks - requires pandoc
 
   - yamllint
-  # flatpak-spawn --host gnome-terminal %d # Terminal in flatpak version
 
 post_install:
   run:

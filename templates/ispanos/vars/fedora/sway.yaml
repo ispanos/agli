@@ -42,7 +42,6 @@ packages:
   - package: xsettingsd
     purpose: Xwayland gtk settings
 
-
   - nautilus-dropbox
   - file-roller-nautilus
   - package: seahorse

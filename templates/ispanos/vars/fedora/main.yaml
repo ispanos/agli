@@ -1,11 +1,23 @@
 ---
 prerequisite_packages:
   - fedora-workstation-repositories
-  # RPM Fusion - free and non free repositories:
-  - https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
-  - https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
-  # RPM Sphere - Probably update manually: https://rpmsphere.github.io/
-  # - https://github.com/rpmsphere/noarch/raw/master/r/rpmsphere-release-36-1.noarch.rpm
+  - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+  - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+pre_install:
+  run:
+    - >
+      grep 'fastestmirror=1' /etc/dnf/dnf.conf ||
+      echo 'fastestmirror=1' |
+      sudo tee -a /etc/dnf/dnf.conf
+    - >
+      grep 'max_parallel_downloads=10' /etc/dnf/dnf.conf ||
+      echo 'max_parallel_downloads=10' |
+      sudo tee -a /etc/dnf/dnf.conf
+    - >
+      grep 'defaultyes=True' /etc/dnf/dnf.conf ||
+      echo 'defaultyes=True' |
+      sudo tee -a /etc/dnf/dnf.conf
 
 include:
   - vars/fedora/base_packages.yaml
@@ -31,7 +43,6 @@ include:
   # - vars/fedora/intel_gpu.yaml
   # - vars/fedora/tlp.yaml
 
-
 remove:
   - cheese
   - gnome-boxes
@@ -43,7 +54,18 @@ remove:
   - abiword
   - mediawriter
   - fedora-chromium-config
+  - blueman-nautilus
+  # - PackageKit-gstreamer-plugin
+  # - PackageKit
+  # - PackageKit-command-not-found
+  # - gnome-software
 
-# post_install:
-#   run:
-#     # - sudo dnf install -y --setopt=install_weak_deps=False
+post_install:
+  run:
+    - sudo dnf groupupdate core
+    # - sudo dnf install -y --setopt=install_weak_deps=False
+    # - sudo systemctl disable packagekit.service
+    # - sudo systemctl mask packagekit.service
+    # - sudo systemctl disable packagekit-offline-update.service
+    # - sudo systemctl mask packagekit-offline-update.service
+

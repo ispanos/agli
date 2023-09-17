@@ -18,8 +18,9 @@ def pop_include_files(config: dict) -> Tuple[dict, list]:
 
     for file in paths:
         _, file_extension = os.path.splitext(file)
-        if not file_extension == '.yaml' or file_extension == '.yml':
-            raise Exception(f"'{file_extension}' is not a valid file extension.")
+        if file_extension != '.yaml' and file_extension != '.yml':
+            raise Exception(
+                f"'{file_extension}' is not a valid file extension for file: '{file}'.")
 
     return config, paths
 

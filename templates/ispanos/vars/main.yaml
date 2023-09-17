@@ -24,4 +24,5 @@ post_install:
     - >
         /usr/bin/git --git-dir=/home/{current_user}/.cfg/
         --work-tree=/home/{current_user} update-index
-        --assume-unchanged /home/{current_user}/.config/sway/config
+        --assume-unchanged /home/{current_user}/.config/sway/config || echo ''
+

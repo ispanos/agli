@@ -1,5 +1,7 @@
 ---
 pre_install:
+  run:
+    - sudo rpm --import https://packages.microsoft.com/keys/microsoft.asc
   files:
     - path: "/etc/yum.repos.d/vscode.repo"
       content: |
@@ -53,7 +55,7 @@ packages:
     purpose: RDP and VNC client
     manager: flatpak
 
-  - package: gitkraken
+  - package: com.axosoft.GitKraken
     manager: flatpak
   - package: md.obsidian.Obsidian
     purpose: A knowledge base that works on local Markdown files.

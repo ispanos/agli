@@ -10,3 +10,22 @@ post_install:
     - sudo grubby --args="iommu=pt" --update-kernel=ALL
     - sudo grubby --args="amd_iommu=on" --update-kernel=ALL
     - sudo grubby --args="kvm.ignore_msrs=1" --update-kernel=ALL
+
+include:
+  - vars/fedora/base.yml
+  - vars/fedora/desktop.yml
+  # - vars/fedora/docker.yml
+  - vars/fedora/dynare.yml
+  # - vars/fedora/games.yml
+  - vars/fedora/gnome.yml
+  # - vars/fedora/grib.yml
+  # - vars/fedora/ifort.yml
+  - vars/fedora/julia.yml
+  - vars/fedora/logi.yml
+  - vars/fedora/main.yml
+  - vars/fedora/matlab.yml
+  - vars/fedora/r.yml
+  - vars/fedora/stata.yml
+  # - vars/fedora/sway.yml
+  - vars/fedora/tex.yml
+  - vars/fedora/workstation.yml

@@ -10,8 +10,24 @@ packages:
 
 post_install:
   run:
-  - sudo grubby --args="iommu=pt" --update-kernel=ALL
-  - sudo grubby --args="intel_iommu=on" --update-kernel=ALL
-  - sudo install -Dm644 vars/files/nvidia-pm/80-nvidia-pm.rules /lib/udev/rules.d/80-nvidia-pm.rules
-  - sudo install -Dm755 vars/files/nvidia-pm/nvidia.conf /etc/modprobe.d/nvidia.conf
+    - sudo grubby --args="iommu=pt" --update-kernel=ALL
+    - sudo grubby --args="intel_iommu=on" --update-kernel=ALL
+    - sudo install -Dm644 vars/files/nvidia-pm/80-nvidia-pm.rules /lib/udev/rules.d/80-nvidia-pm.rules
+    - sudo install -Dm755 vars/files/nvidia-pm/nvidia.conf /etc/modprobe.d/nvidia.conf
   # http://us.download.nvidia.com/XFree86/Linux-x86_64/535.43.02/README/dynamicpowermanagement.html
+
+include:
+  - vars/fedora/base.yml
+  - vars/fedora/desktop.yml
+  # - vars/fedora/docker.yml
+  - vars/fedora/dynare.yml
+  - vars/fedora/gnome.yml
+  - vars/fedora/julia.yml
+  - vars/fedora/logi.yml
+  - vars/fedora/matlab.yml
+  - vars/fedora/r.yml
+  - vars/fedora/stata.yml
+  # - vars/fedora/sway.yml
+  - vars/fedora/tex.yml
+  - vars/fedora/workstation.yml
+  # - vars/fedora/tlp.yml

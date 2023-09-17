@@ -13,7 +13,7 @@ from varparser.configurations import Configurations
 from varparser.parser import get_variables
 
 
-def main():
+def main(args):
 
     if os.geteuid() == 0:
         print(
@@ -27,7 +27,7 @@ def main():
 
     log_time()
 
-    config = get_variables()
+    config = get_variables(args.include)
     log_print(pretty_dict(config))
 
     config = Configurations(config)
@@ -61,11 +61,10 @@ def main():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    # parser.add_argument('-x', '--no-main', help='')
-    # parser.add_argument('-i', '--include', help='')
-    # parser.add_argument('command', help='You can use the following commands: search, get, set')
-    # parser.add_argument('-c', '--client', help='IP address of the client device')
-    # parser.add_argument('params', nargs='*', default=None, type=str)
+    parser.add_argument(
+        '-i', '--include', nargs='+',
+        help='Include specific yaml files with configurations.')
 
+    args = parser.parse_args()
 
-    main()
+    main(args)

@@ -7,4 +7,5 @@ packages:
 
 post_install:
   run:
-    - sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5
+    # - sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5
+    - sudo ln -s /usr/lib64/libncurses.so /usr/lib64/libncurses.so.5

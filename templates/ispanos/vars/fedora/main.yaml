@@ -40,7 +40,6 @@ include:
   - vars/fedora/tex.yaml
   - vars/fedora/workstation.yaml
   # - vars/fedora/p14s.yaml
-  # - vars/fedora/intel_gpu.yaml
   # - vars/fedora/tlp.yaml
 
 remove:

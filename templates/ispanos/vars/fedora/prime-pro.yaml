@@ -10,7 +10,3 @@ post_install:
     - sudo grubby --args="iommu=pt" --update-kernel=ALL
     - sudo grubby --args="amd_iommu=on" --update-kernel=ALL
     - sudo grubby --args="kvm.ignore_msrs=1" --update-kernel=ALL
-    - sudo dnf swap mesa-va-drivers mesa-va-drivers-freeworld
-    - sudo dnf swap mesa-vdpau-drivers mesa-vdpau-drivers-freeworld
-    # - sudo dnf swap mesa-va-drivers.i686 mesa-va-drivers-freeworld.i686
-    # - sudo dnf swap mesa-vdpau-drivers.i686 mesa-vdpau-drivers-freeworld.i686

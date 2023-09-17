@@ -1,11 +1,10 @@
 ---
 packages:
   - bat
-  - exa
+  - lsd
   - fontawesome-fonts-web
   - google-carlito-fonts
   - hddtemp
-  - highlight
   - htop
   - lm_sensors
   - lshw
@@ -16,8 +15,6 @@ packages:
   - procinfo
   - procs
   - pv
-  # - package: simple-mtpfs
-  #   purpose: CLI MTP filesystem utility
   - smartmontools
   - package: util-linux-user
     purpose: Provides `chsh` to change to zsh
@@ -25,4 +22,3 @@ packages:
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
-  - sqlite

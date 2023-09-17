@@ -6,8 +6,7 @@ packages:
   - package: google-chrome-stable
   - package: alsa-tools
     purpose: Provides hdajackretask - Can disable unused audio cards
-  - package: helvum
-    purpose: Audio input-output connections using graph
+
   - package: audacity
   - package: gimp
   - package: gcolor3
@@ -25,6 +24,13 @@ packages:
     --exclude=gstreamer1-plugins-bad-free-devel \
   - lame\* --exclude=lame-devel
   - libva-utils
+
+  - package: org.rncbc.qpwgraph
+    purpose: Audio input-output connections using graph
+    manager: flatpak
+  - package: org.pipewire.Helvum
+    purpose: Audio input-output connections using graph
+    manager: flatpak
 
   - package: com.github.tchx84.Flatseal
     manager: flatpak
@@ -58,8 +64,6 @@ packages:
     manager: flatpak
   - package: org.mozilla.Thunderbird
     manager: flatpak
-  # - package: us.zoom.Zoom
-  #   manager: flatpak
 
 post_install:
   run:

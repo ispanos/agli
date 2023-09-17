@@ -14,38 +14,11 @@ packages:
   - "@virtualization"
   - spice-gtk
 
-  - package: com.anydesk.Anydesk
-    manager: flatpak
-  - package: org.remmina.Remmina
-    purpose: RDP and VNC client
-    manager: flatpak
-
-  - package: md.obsidian.Obsidian
-    purpose: A knowledge base that works on local Markdown files.
-    manager: flatpak
-  - package: org.zotero.Zotero
-    manager: flatpak
-  - package: com.calibre_ebook.calibre
-    purpose: e-pub reader
-    manager: flatpak
-
-  - package: gnome-commander
-    purpose: A more powerful file manager
-
-  - package: com.obsproject.Studio
-    manager: flatpak
-
-  - package: odt2txt
-  - package: pdftk-java
-    purpose: Editing pdf files
-  - package: qpdf
-    purpose: Editing pdf files
-
   - package: code
     purpose: IDE
 
-  - package: gitkraken
-    manager: flatpak
+  - package: gnome-commander
+    purpose: A more powerful file manager
 
   - package: cmake
   - package: dialog
@@ -57,8 +30,10 @@ packages:
   - package: nmap
   - package: npm
   - package: ShellCheck
+  - package: sqlite
   - package: sqlitebrowser
 
+  - package: yamllint
   - package: python3-autopep8
   - package: python3-matplotlib
   - package: python3-numpy
@@ -72,7 +47,31 @@ packages:
   - package: python3-nbconvert
     purpose: Converting Jupyter Notebooks - requires pandoc
 
-  - yamllint
+  - package: com.anydesk.Anydesk
+    manager: flatpak
+  - package: org.remmina.Remmina
+    purpose: RDP and VNC client
+    manager: flatpak
+
+  - package: gitkraken
+    manager: flatpak
+  - package: md.obsidian.Obsidian
+    purpose: A knowledge base that works on local Markdown files.
+    manager: flatpak
+  - package: org.zotero.Zotero
+    manager: flatpak
+  - package: com.calibre_ebook.calibre
+    purpose: e-pub reader
+    manager: flatpak
+
+  - package: com.obsproject.Studio
+    manager: flatpak
+
+  - package: odt2txt
+  - package: pdftk-java
+    purpose: Editing pdf files
+  - package: qpdf
+    purpose: Editing pdf files
 
 post_install:
   run:

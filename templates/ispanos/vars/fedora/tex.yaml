@@ -2,10 +2,8 @@
 packages:
   - package: texlive-scheme-basic
   - package: texlive-import
-
   - package: latexmk
-    purpose: latex make + Dynare
-
+    purpose: latex make
   - package: texlive-adjustbox
   - package: texlive-appendix
   - package: texlive-tex4ht

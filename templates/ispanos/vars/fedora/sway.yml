@@ -1,4 +1,7 @@
 ---
+
+# TODO: Fix p14s gen2i's microphone mute indicator on Sway.
+
 packages:
   - package: sway
   - package: swaylock
@@ -61,10 +64,13 @@ post_install:
     - sudo usermod -a -G input {current_user}
     - sudo install -Dm755 vars/files/sway/sway-ptinopedila.sh /usr/local/bin/sway-ptinopedila
     - sudo install -Dm644 vars/files/sway/sway-ptinopedila.desktop /usr/share/wayland-sessions/sway-ptinopedila.desktop
-    - systemctl --user enable /home/{current_user}/.config/systemd/user/*.target /home/{current_user}/.config/systemd/user/*.service
+    - >
+      systemctl --user enable
+        /home/{current_user}/.config/systemd/user/*.target
+        /home/{current_user}/.config/systemd/user/*.service
     - >
       curl -L "https://github.com/nwg-piotr/autotiling/raw/master/autotiling/main.py"
-           -o "/home/{current_user}/.local/bin/wm-scripts/autotiling" && 
+           -o "/home/{current_user}/.local/bin/wm-scripts/autotiling" &&
       chmod +x "/home/{current_user}/.local/bin/wm-scripts/autotiling"
     - >
       sudo cp /etc/pam.d/swaylock /home/{current_user}/pam-swaylock.bak &&

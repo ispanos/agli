@@ -7,17 +7,23 @@ packages:
   - intel-gpu-tools
   - intel-media-driver
   - powertop
+  - package: org.gnome.PowerStats
+    manager: flatpak
 
 post_install:
   run:
     - sudo grubby --args="iommu=pt" --update-kernel=ALL
     - sudo grubby --args="intel_iommu=on" --update-kernel=ALL
-    - sudo install -Dm644 vars/files/nvidia-pm/80-nvidia-pm.rules /lib/udev/rules.d/80-nvidia-pm.rules
-    - sudo install -Dm755 vars/files/nvidia-pm/nvidia.conf /etc/modprobe.d/nvidia.conf
-  # http://us.download.nvidia.com/XFree86/Linux-x86_64/535.43.02/README/dynamicpowermanagement.html
+    - >
+      sudo install -Dm644
+        vars/files/99-thinkpad-thresholds-polkit.rules /etc/polkit-1/rules.d/99-thinkpad-thresholds-polkit.rules
+    - |
+      sudo install -Dm644 vars/files/nvidia-pm/80-nvidia-pm.rules /lib/udev/rules.d/80-nvidia-pm.rules
+      sudo install -Dm755 vars/files/nvidia-pm/nvidia.conf /etc/modprobe.d/nvidia.conf
+      # http://us.download.nvidia.com/XFree86/Linux-x86_64/535.43.02/README/dynamicpowermanagement.html
+    # - sudo systemctl enable --now powertop.service
 
 include:
-  - vars/fedora/base.yml
   - vars/fedora/desktop.yml
   # - vars/fedora/docker.yml
   - vars/fedora/dynare.yml
@@ -31,3 +37,10 @@ include:
   - vars/fedora/tex.yml
   - vars/fedora/workstation.yml
   # - vars/fedora/tlp.yml
+
+## Manual things:
+
+# - Matlab
+# - Stata
+# - aueb VPN
+# - allow older versions of TLS, for eduroam

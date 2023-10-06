@@ -1,0 +1,7 @@
+---
+packages:
+  - powertop
+
+post_install:
+  run:
+    - sudo systemctl enable --now powertop.service

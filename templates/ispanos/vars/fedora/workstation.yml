@@ -19,6 +19,8 @@ packages:
   - package: code
     purpose: IDE
 
+  - package: neovim
+
   - package: gnome-commander
     purpose: A more powerful file manager
 
@@ -49,13 +51,19 @@ packages:
   - package: python3-nbconvert
     purpose: Converting Jupyter Notebooks - requires pandoc
 
+  - package: odt2txt
+  - package: pdftk-java
+    purpose: Editing pdf files
+  - package: qpdf
+    purpose: Editing pdf files
+
   - package: com.anydesk.Anydesk
     manager: flatpak
   - package: org.remmina.Remmina
     purpose: RDP and VNC client
     manager: flatpak
 
-  - package: com.axosoft.GitKraken
+  - package: org.gnome.gitg
     manager: flatpak
   - package: md.obsidian.Obsidian
     purpose: A knowledge base that works on local Markdown files.
@@ -68,12 +76,6 @@ packages:
 
   - package: com.obsproject.Studio
     manager: flatpak
-
-  - package: odt2txt
-  - package: pdftk-java
-    purpose: Editing pdf files
-  - package: qpdf
-    purpose: Editing pdf files
 
 post_install:
   run:

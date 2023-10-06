@@ -1,7 +1,7 @@
 ---
 packages:
+  - package: yt-dlp
   - package: firewall-config
-  - package: alacritty
   - package: dropbox
   - package: google-chrome-stable
   - package: alsa-tools
@@ -26,6 +26,9 @@ packages:
   - libva-utils
   - package: v4l2loopback
     purpose: Create loopback devices like a virtual camera in OBS.
+
+  - package: org.chromium.Chromium
+    manager: flatpak
 
   - package: org.rncbc.qpwgraph
     purpose: Audio input-output connections using graph

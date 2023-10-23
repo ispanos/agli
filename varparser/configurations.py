@@ -134,7 +134,7 @@ class Configurations:
 
         for manager in parsed.keys():
             for (values, items) in parsed[manager].items():
-                parsed[manager][values] = list(set(items))
+                parsed[manager][values] = sorted(list(set(items)))
         return parsed
 
     def _set_pm_commands(self) -> Dict[str, PackageManagerCommands]:

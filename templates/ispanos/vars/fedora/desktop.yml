@@ -1,43 +1,51 @@
 ---
 packages:
-  - package: yt-dlp
-  - package: firewall-config
-  - package: dropbox
-  - package: google-chrome-stable
+  # Media libraries
+  - "@multimedia"
+  - gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
+  - package: gstreamer1-libav
+  - package: lame
+  - package: libva-utils
+  - package: pipewire-codec-aptx 
+  - package: v4l2loopback
+    purpose: Create loopback devices like a virtual camera in OBS.
   - package: alsa-tools
     purpose: Provides hdajackretask - Can disable unused audio cards
 
-  - package: audacity
-  - package: gimp
-  - package: gcolor3
-  - package: mpv
+  - package: yt-dlp
+  - package: firewall-config
+  - package: dropbox
+
   - package: zathura
+    purpose: A secondary pdf reader as Gnome's document viewer does not allow openning the same pdf twice.
   - package: zathura-djvu
   - package: zathura-pdf-mupdf
   - package: zathura-zsh-completion
 
-  # Media libraries
-  - >
-    gstreamer1-plugins-{bad-\*,good-\*,base}
-    gstreamer1-plugin-openh264
-    gstreamer1-libav
-    --exclude=gstreamer1-plugins-bad-free-devel \
-  - lame\* --exclude=lame-devel
-  - libva-utils
-  - package: v4l2loopback
-    purpose: Create loopback devices like a virtual camera in OBS.
+  - package: google-chrome-stable
+
+  # - package: com.google.Chrome
+  #   manager: flatpak
 
   - package: org.chromium.Chromium
     manager: flatpak
-
+  - package: org.audacityteam.Audacity
+    manager: flatpak
+  - package: org.gimp.GIMP
+    manager: flatpak
+  - package: io.mpv.Mpv
+    manager: flatpak
   - package: org.rncbc.qpwgraph
     purpose: Audio input-output connections using graph
     manager: flatpak
   - package: org.pipewire.Helvum
     purpose: Audio input-output connections using graph
     manager: flatpak
-
+  - package: nl.hjdskes.gcolor3
+    manager: flatpak
   - package: com.github.tchx84.Flatseal
+    manager: flatpak
+  - package: io.github.flattool.Warehouse
     manager: flatpak
   - package: com.github.xournalpp.xournalpp
     purpose: Handwriting
@@ -69,8 +77,3 @@ packages:
     manager: flatpak
   - package: org.mozilla.Thunderbird
     manager: flatpak
-
-post_install:
-  run:
-    - sudo dnf group upgrade --with-optional Multimedia -y
-    - sudo dnf groupupdate multimedia -y --setop="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin

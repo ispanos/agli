@@ -6,6 +6,8 @@ prerequisite_packages:
 
 pre_install:
   run:
+    - flatpak remote-modify fedora --disable
+    - flatpak remote-modify fedora-testing --disable
     - >
       grep 'fastestmirror=1' /etc/dnf/dnf.conf ||
       echo 'fastestmirror=1' |

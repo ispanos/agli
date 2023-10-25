@@ -12,6 +12,8 @@ packages:
   - package: alsa-tools
     purpose: Provides hdajackretask - Can disable unused audio cards
 
+  - package: solaar
+
   - package: yt-dlp
   - package: firewall-config
   - package: dropbox

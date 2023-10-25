@@ -29,7 +29,6 @@ include:
   - vars/fedora/dynare.yml
   - vars/fedora/gnome.yml
   - vars/fedora/julia.yml
-  - vars/fedora/logi.yml
   - vars/fedora/matlab.yml
   - vars/fedora/r.yml
   - vars/fedora/stata.yml

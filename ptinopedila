@@ -11,6 +11,109 @@ from utils import log_print, log_time, pretty_dict
 from varparser.command_parser import run_commands
 from varparser.configurations import Configurations
 from varparser.parser import get_variables
+import sys
+import yaml
+import json
+
+
+def colorize_yaml(yaml_str):
+    # Define ANSI escape codes for colors
+    color_mapping = {
+        'header': '\033[95m',  # Magenta
+        'key': '\033[93m',     # Yellow
+        'value': '\033[92m',   # Green
+        'reset': '\033[0m'     # Reset color
+    }
+
+    colored_yaml = ""
+    lines = yaml_str.split('\n')
+    for line in lines:
+        if not line:
+            continue
+        if line.strip().startswith('- '):
+            # This line represents a list item
+            colored_yaml += color_mapping['value'] + \
+                line + color_mapping['reset'] + '\n'
+        else:
+            key, value = line.split(':', 1)
+            key = key.strip()
+            colored_yaml += color_mapping['key'] + \
+                key + ':' + color_mapping['reset'] + ' '
+            colored_yaml += color_mapping['value'] + \
+                value.strip() + color_mapping['reset'] + '\n'
+
+    return colored_yaml
+
+
+def dry_run(args):
+    config = get_variables(args.include)
+    # log_print(pretty_dict(config))
+
+    config = Configurations(config)
+    package = PackageManager(config)
+
+    files_0 = None
+
+    if config.pre_install_files:
+        files_0 = [{'path': x.path, 'content': x.content}
+                   for x in config.pre_install_files]
+
+    if config.post_install_files:
+        files_1 = [{'path': x.path, 'content': x.content}
+                   for x in config.post_install_files]
+    j_config = {
+        # "First set of commands:"
+        'commands_0': config.pre_install_commands,
+        # "First set of files:"
+        'files_0': files_0,
+        # "Prerequisite packages need for the rest of the installation:"
+        'packages_0': config.packages_prerequisite,
+        # "Main list of packages:"
+        'packages_1': config.packages,
+        # "Second set of commands:"
+        'commands_1': config.post_install_commands,
+        # "Packages to be removed:"
+        'remove': config.junk
+    }
+
+    if args.json:
+        print(pretty_dict(j_config))
+        return
+
+    ymal_string = yaml.safe_dump(
+        j_config, indent=2, default_flow_style=False, default_style='\"',
+        width=1000)
+
+    # ymal_string = yaml.safe_dump(
+    #     j_config, indent=2, default_flow_style=False, default_style='',
+    #     width=1000)
+    
+    # ymal_string_split = ymal_string.splitlines()
+    # ymal_string = "\n".join([line for line in ymal_string_split if line.strip() != ""])
+        
+
+    if args.color:
+        print(((('-')*80)+'\n')*3)
+        print("WARNING:")
+        print("Colored output not working properly!")
+        print(((('-')*80)+'\n')*3)
+
+        try:
+            parsed_yaml = yaml.safe_load(ymal_string)
+            colorized_output = colorize_yaml(ymal_string)
+            print(colorized_output)
+
+        except yaml.YAMLError as e:
+            print("Error parsing YAML:", e)
+            sys.exit(1)
+
+        print(((('-')*80)+'\n')*3)
+        print("WARNING:")
+        print("Colored output not working properly!")
+        print(((('-')*80)+'\n')*3)
+
+    else:
+        print(ymal_string)
 
 
 def main(args):
@@ -20,7 +123,11 @@ def main(args):
             "This script changes your users configurations thus it should not",
             "be run as root. You may need to enter your password multiple times."
         )
-        exit(1)
+        sys.exit(1)
+
+    if args.dry_run:
+        dry_run(args)
+        return
 
     if os.path.exists("log.txt"):
         os.remove("log.txt")
@@ -61,9 +168,28 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
+
     parser.add_argument(
         '-i', '--include', nargs='+',
         help='Include specific yaml files with configurations.')
+
+    parser.add_argument(
+        '--dry-run',
+        action='store_true',
+        help='Perform a dry run without making actual changes.'
+    )
+
+    parser.add_argument(
+        '--json',
+        action='store_true',
+        help='When in dry-run mode, print configs in json format.'
+    )
+
+    parser.add_argument(
+        '-c', '--color',
+        action='store_true',
+        help='When in dry-run mode, print configs with color.'
+    )
 
     args = parser.parse_args()
 

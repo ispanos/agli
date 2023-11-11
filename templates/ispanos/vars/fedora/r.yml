@@ -129,7 +129,7 @@ packages:
   - R-CRAN-lme4
   - R-CRAN-lubridate
   - R-CRAN-magrittr
-  - R-CRAN-maptools
+  # - R-CRAN-maptools  Consider using 'sf' or 'terra' instead.
   - R-CRAN-matrixStats
   - R-CRAN-mgcv
   - R-CRAN-minqa

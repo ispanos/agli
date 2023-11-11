@@ -25,6 +25,10 @@ include:
   - vars/fedora/matlab.yml
   - vars/fedora/r.yml
   - vars/fedora/stata.yml
-  # - vars/fedora/sway.yml
   - vars/fedora/tex.yml
   - vars/fedora/workstation.yml
+
+## Manual things:
+
+# - Matlab
+# - Stata

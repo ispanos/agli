@@ -25,14 +25,12 @@ post_install:
 
 include:
   - vars/fedora/desktop.yml
-  # - vars/fedora/docker.yml
   - vars/fedora/dynare.yml
   - vars/fedora/gnome.yml
   - vars/fedora/julia.yml
   - vars/fedora/matlab.yml
   - vars/fedora/r.yml
   - vars/fedora/stata.yml
-  # - vars/fedora/sway.yml
   - vars/fedora/tex.yml
   - vars/fedora/workstation.yml
   # - vars/fedora/tlp.yml

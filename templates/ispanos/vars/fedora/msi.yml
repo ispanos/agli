@@ -26,3 +26,8 @@ include:
   - vars/fedora/stata.yml
   - vars/fedora/tex.yml
   - vars/fedora/workstation.yml
+
+## Manual things:
+
+# - Matlab
+# - Statas

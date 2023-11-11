@@ -24,11 +24,14 @@ packages:
   - package: zathura-pdf-mupdf
   - package: zathura-zsh-completion
 
-  - package: google-chrome-stable
+  # - package: google-chrome-stable
 
-  # - package: com.google.Chrome
-  #   manager: flatpak
-
+  - package: org.mozilla.firefox
+    manager: flatpak
+  - package: com.google.Chrome
+    manager: flatpak
+  - package: org.gnome.Evince
+    manager: flatpak
   - package: org.chromium.Chromium
     manager: flatpak
   - package: org.audacityteam.Audacity

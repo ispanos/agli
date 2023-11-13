@@ -8,3 +8,5 @@ packages:
   - package: texlive-appendix
   - package: texlive-tex4ht
     purpose: Provides `htlatex`
+  - texlive-collection-langgreek
+  - texlive-collection-langenglish

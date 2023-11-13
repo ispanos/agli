@@ -1,0 +1,27 @@
+---
+# Random packages that I may need to revert back to.
+packages:
+  - package: zathura
+    purpose: A secondary pdf reader as Gnome's document viewer does not allow openning the same pdf twice.
+  - package: zathura-djvu
+  - package: zathura-pdf-mupdf
+  - package: zathura-zsh-completion
+
+  - package: pipewire-codec-aptx
+    purpose: Provides Qualcom proprietary audio codec compression algorithm
+
+  - package: google-chrome-stable
+    purpose: Added in case flatpak doesn't work properly.
+---
+# nautilus-open-any-terminal
+
+packages:
+  - package: nautilus-python
+  - package: nautilus-open-any-terminal
+    manager: pip
+
+post_install:
+  run:
+    - |
+      glib-compile-schemas ~/.local/share/glib-2.0/schemas/
+      gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty

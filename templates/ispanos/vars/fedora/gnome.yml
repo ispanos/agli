@@ -1,32 +1,21 @@
 ---
 packages:
-  # - package: nautilus-python
-  # - package: nautilus-open-any-terminal
-  #   manager: pip
+  - package: gnome-shell-extension-caffeine
+  - package: gnome-shell-extension-gsconnect
+  - package: gnome-shell-extension-appindicator
+  - package: gnome-shell-extension-just-perfection
+  - package: com.mattjakeman.ExtensionManager
+    manager: flatpak
+  - package: gnome-tweaks
+
   - package: wofi
   - package: pavucontrol
   - package: playerctl
-    purpose: media control
-  - package: gnome-shell-extension-caffeine
-  - package: com.mattjakeman.ExtensionManager
-    manager: flatpak
-  - gnome-shell-extension-gsconnect
-  - openssl
-  - gnome-tweaks
 
-  - nautilus-dropbox
-  - file-roller-nautilus
+  - package: nautilus-dropbox
+  - package: file-roller-nautilus
   - package: seahorse
-    purpose: graphical interface for managing and using encryption keys.
-  - seahorse-nautilus
+  - package: seahorse-nautilus
 
 post_install:
   run:
-  # - |
-  #   # nautilus-open-any-terminal
-  #   glib-compile-schemas ~/.local/share/glib-2.0/schemas/
-  #   gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
-  # - |
-  #    git clone https://github.com/dracula/gnome-terminal
-  #    cd gnome-terminal
-  #    ./install.sh -s Dracula -p main --skip-dircolors

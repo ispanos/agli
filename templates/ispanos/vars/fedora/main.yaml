@@ -30,6 +30,7 @@ packages:
   - mediainfo
   - nvme-cli
   - openssh
+  - openssl
   - p7zip
   - procinfo
   - procs
@@ -46,6 +47,7 @@ remove:
   - evince
   - firefox
   - gnome-boxes
+  - gnome-extensions-app
   - gnome-shell-extension-window-list
   - gnome-tour
   - gnome-photos
@@ -62,7 +64,7 @@ remove:
 
 post_install:
   run:
-    - echo ''
+    - sudo grubby --args="iommu=pt" --update-kernel=ALL
     # - sudo dnf install -y --setopt=install_weak_deps=False
     # - sudo systemctl disable packagekit.service
     # - sudo systemctl mask packagekit.service

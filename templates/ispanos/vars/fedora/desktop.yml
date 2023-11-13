@@ -6,7 +6,6 @@ packages:
   - package: gstreamer1-libav
   - package: lame
   - package: libva-utils
-  - package: pipewire-codec-aptx 
   - package: v4l2loopback
     purpose: Create loopback devices like a virtual camera in OBS.
   - package: alsa-tools
@@ -17,14 +16,6 @@ packages:
   - package: yt-dlp
   - package: firewall-config
   - package: dropbox
-
-  - package: zathura
-    purpose: A secondary pdf reader as Gnome's document viewer does not allow openning the same pdf twice.
-  - package: zathura-djvu
-  - package: zathura-pdf-mupdf
-  - package: zathura-zsh-completion
-
-  # - package: google-chrome-stable
 
   - package: org.mozilla.firefox
     manager: flatpak

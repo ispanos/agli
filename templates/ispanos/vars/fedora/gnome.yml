@@ -7,15 +7,11 @@ packages:
   - package: com.mattjakeman.ExtensionManager
     manager: flatpak
   - package: gnome-tweaks
-
+  - package: io.github.realmazharhussain.GdmSettings
+    manager: flatpak
   - package: wofi
-  - package: pavucontrol
   - package: playerctl
-
   - package: nautilus-dropbox
   - package: file-roller-nautilus
   - package: seahorse
   - package: seahorse-nautilus
-
-post_install:
-  run:

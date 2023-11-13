@@ -1,6 +1,8 @@
 ---
 # Random packages that I may need to revert back to.
 packages:
+  - package: alsa-tools
+    purpose: Provides hdajackretask - Can disable unused audio cards andhdajacksensetest
   - package: zathura
     purpose: A secondary pdf reader as Gnome's document viewer does not allow openning the same pdf twice.
   - package: zathura-djvu
@@ -14,7 +16,6 @@ packages:
     purpose: Added in case flatpak doesn't work properly.
 ---
 # nautilus-open-any-terminal
-
 packages:
   - package: nautilus-python
   - package: nautilus-open-any-terminal
@@ -25,3 +26,15 @@ post_install:
     - |
       glib-compile-schemas ~/.local/share/glib-2.0/schemas/
       gsettings set com.github.stunkymonkey.nautilus-open-any-terminal terminal alacritty
+
+---
+# Docker - replaced by podman-docker
+pre_install:
+  run:
+    - sudo dnf config-manager --add-repo https://download.docker.com/linux/fedora/docker-ce.repo # Docker
+
+packages:
+  - package: docker-ce
+  - package: docker-ce-cli
+  - package: containerd.io # Docker
+  - package: docker-compose-plugin

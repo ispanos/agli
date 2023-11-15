@@ -1,4 +1,15 @@
 ---
+# nextcloud
+packages:
+  - nextcloud-client nextcloud-client-nautilus
+
+post_install:
+  run:
+    - |
+      grep 'fs.inotify.max_user_watches' /etc/sysctl.conf ||
+      echo 'fs.inotify.max_user_watches = 524288' | sudo tee -a /etc/sysctl.conf
+      sudo sysctl -p
+---
 # Random packages that I may need to revert back to.
 packages:
   - package: alsa-tools
@@ -14,6 +25,7 @@ packages:
 
   - package: google-chrome-stable
     purpose: Added in case flatpak doesn't work properly.
+
 ---
 # nautilus-open-any-terminal
 packages:
@@ -38,3 +50,26 @@ packages:
   - package: docker-ce-cli
   - package: containerd.io # Docker
   - package: docker-compose-plugin
+
+---
+packages:
+  - powertop
+
+post_install:
+  run:
+    - sudo systemctl enable --now powertop.service
+
+---
+# Might want to remove at some point.
+remove:
+  - PackageKit-gstreamer-plugin
+  - PackageKit
+  - PackageKit-command-not-found
+  - gnome-software
+
+post_install:
+  run:
+    - sudo systemctl disable packagekit.service
+    - sudo systemctl mask packagekit.service
+    - sudo systemctl disable packagekit-offline-update.service
+    - sudo systemctl mask packagekit-offline-update.service

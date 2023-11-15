@@ -25,7 +25,6 @@ packages:
   - package: grim
   - package: slurp
     purpose: region-screenshot utility for Wayland
-  - package: pavucontrol
   - package: brightnessctl
     purpose: laptop brightness control
   - package: wdisplays
@@ -58,6 +57,9 @@ packages:
 
   - package: wev
     purpose: Keybind finder
+
+  - package: org.pulseaudio.pavucontrol
+    manager: flatpak
 
 post_install:
   run:

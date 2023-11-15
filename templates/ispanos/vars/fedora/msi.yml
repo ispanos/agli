@@ -11,11 +11,6 @@ packages:
   - package: firewall-config
   - package: wine
 
-post_install:
-  run:
-    - sudo grubby --args="iommu=pt" --update-kernel=ALL
-    - sudo grubby --args="amd_iommu=on" --update-kernel=ALL
-
 include:
   - vars/fedora/dynare.yml
   - vars/fedora/gnome.yml
@@ -26,8 +21,3 @@ include:
   - vars/fedora/stata.yml
   - vars/fedora/tex.yml
   - vars/fedora/workstation.yml
-
-## Manual things:
-
-# - Matlab
-# - Statas

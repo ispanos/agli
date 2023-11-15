@@ -1,19 +1,26 @@
 ---
+pre_install:
+  run:
+    # Media libraries installed separetly to "allowerasing".
+    - sudo dnf install -y --allowerasing "@multimedia" gstreamer1-libav gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
 packages:
-  # Media libraries
-  - "@multimedia"
-  - gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
-  - package: gstreamer1-libav
+  # - "@multimedia"
+  # - gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
+  # - package: gstreamer1-libav
   - package: lame
   - package: libva-utils
   - package: v4l2loopback
 
   - package: solaar
-
   - package: yt-dlp
   - package: firewall-config
   - package: dropbox
 
+  - package: profile-sync-daemon
+
+  # org.gnome.Loupe org.gnome.Photos
+  - package: org.gnome.Calendar
+    manager: flatpak
   - package: org.pulseaudio.pavucontrol
     manager: flatpak
   - package: org.mozilla.firefox
@@ -72,3 +79,7 @@ packages:
     manager: flatpak
   - package: org.mozilla.Thunderbird
     manager: flatpak
+
+post_install:
+  run:
+    - systemctl --user enable psd.service

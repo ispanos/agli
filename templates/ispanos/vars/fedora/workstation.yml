@@ -15,10 +15,9 @@ pre_install:
 packages:
   - "@virtualization"
   - spice-gtk
-
+  - package: podman-docker
   - package: neovim
   - package: code
-    purpose: IDE
 
   - package: cmake
   - package: dialog

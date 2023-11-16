@@ -45,15 +45,9 @@ def colorize_yaml(yaml_str):
     return colored_yaml
 
 
-def dry_run(args):
-    config = get_variables(args.include)
-    # log_print(pretty_dict(config))
-
-    config = Configurations(config)
-    package = PackageManager(config)
-
+def print_formatted_config(args, config):
     files_0 = None
-
+    files_1 = None
     if config.pre_install_files:
         files_0 = [{'path': x.path, 'content': x.content}
                    for x in config.pre_install_files]
@@ -66,6 +60,8 @@ def dry_run(args):
         'commands_0': config.pre_install_commands,
         # "First set of files:"
         'files_0': files_0,
+        # "Second set of files:"
+        'files_1': files_1,
         # "Prerequisite packages need for the rest of the installation:"
         'packages_0': config.packages_prerequisite,
         # "Main list of packages:"
@@ -76,6 +72,8 @@ def dry_run(args):
         'remove': config.junk
     }
 
+    j_config = {k: v for k, v in j_config.items() if v}
+
     if args.json:
         print(pretty_dict(j_config))
         return
@@ -83,14 +81,6 @@ def dry_run(args):
     ymal_string = yaml.safe_dump(
         j_config, indent=2, default_flow_style=False, default_style='\"',
         width=1000)
-
-    # ymal_string = yaml.safe_dump(
-    #     j_config, indent=2, default_flow_style=False, default_style='',
-    #     width=1000)
-    
-    # ymal_string_split = ymal_string.splitlines()
-    # ymal_string = "\n".join([line for line in ymal_string_split if line.strip() != ""])
-        
 
     if args.color:
         print(((('-')*80)+'\n')*3)
@@ -125,20 +115,19 @@ def main(args):
         )
         sys.exit(1)
 
-    if args.dry_run:
-        dry_run(args)
-        return
-
     if os.path.exists("log.txt"):
         os.remove("log.txt")
 
-    log_time()
-
     config = get_variables(args.include)
-    log_print(pretty_dict(config))
-
     config = Configurations(config)
     package = PackageManager(config)
+
+    print_formatted_config(args, config)
+
+    if args.dry_run:
+        return
+
+    log_time()
 
     run_commands(config.pre_install_commands)
 

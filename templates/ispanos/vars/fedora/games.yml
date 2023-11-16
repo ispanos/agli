@@ -5,6 +5,8 @@ packages:
     purpose: Needed for CS:GO
   - package: com.heroicgameslauncher.hgl
     manager: flatpak
+  - package: com.valvesoftware.Steam
+    manager: flatpak
 
   - package: xpadneo
     purpose: Xbox one controller driver

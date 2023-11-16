@@ -58,7 +58,7 @@ def is_pkg_dict(item: dict, valid_fields: tuple) -> bool:
             )
         # TODO: If item is list, unpack it.
         # TODO: (not tested)
-        if not isinstance(value, str) or not isinstance(value, list):
+        if not isinstance(value, str) and not isinstance(value, list):
             raise Exception(
                 f"Invalid package:\n '{item}'.\n"
                 f"Type '{type(value)}' of '{key}':'{value}' must be string or list."

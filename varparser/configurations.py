@@ -134,7 +134,8 @@ class Configurations:
 
         for manager in parsed.keys():
             for (values, items) in parsed[manager].items():
-                parsed[manager][values] = sorted(list(set(items)))
+                flat_items = [item if isinstance(item, str) else item for sublist in items for item in (sublist if isinstance(sublist, list) else [sublist])]
+                parsed[manager][values] = sorted(list(set(flat_items)))
         return parsed
 
     def _set_pm_commands(self) -> Dict[str, PackageManagerCommands]:
@@ -194,10 +195,11 @@ class Configurations:
             return None
         if not self._config[state]['run']:
             return None
-
+        # TODO: 'if "current_user" in line' is a bodge to avoid "ValueError: unexpected '{' in field name" errors
+        # If {current_user} is in the same line with another curly bracket, it won't work.
         return [
             line.format(current_user=self.current_user)
-            for line in self._config[state]['run']
+            for line in self._config[state]['run'] if "current_user" in line
         ]
 
     def get_files(self, state):

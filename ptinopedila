@@ -158,11 +158,6 @@ def main(args):
 
     clone_dotfiles(config.current_user, config.dotfiles_repo)
 
-    fresh_installed = f"/home/{config.current_user}/.local/fresh_pack_list"
-    if not os.path.exists(fresh_installed):
-        installed = package.list_installed('system')
-        log_print(installed, _print=False, log_file=fresh_installed)
-
     log_time()
 
 

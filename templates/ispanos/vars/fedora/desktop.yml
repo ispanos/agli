@@ -2,84 +2,104 @@
 pre_install:
   run:
     # Media libraries installed separetly to "allowerasing".
-    - sudo dnf install -y --allowerasing "@multimedia" gstreamer1-libav gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
+    - sudo dnf install -y --allowerasing "@multimedia" lame gstreamer1-libav gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
+    # rpm-ostree install ffmpeg gstreamer1-plugin-libav gstreamer1-plugins-bad-free-extras gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly gstreamer1-vaapi
 packages:
-  # - "@multimedia"
-  # - gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
-  # - package: gstreamer1-libav
-  - package: lame
-  - package: libva-utils
-  - package: v4l2loopback
+  - ddccontrol-gtk
+  - dropbox
+  - firewall-config
+  - lame
+  - libva-utils
+  - playerctl
+  - profile-sync-daemon
+  - seahorse
+  - solaar
+  - v4l2loopback
+  - yaru-theme
+  - yt-dlp
+  # - input-leap
 
-  - package: solaar
-  - package: yt-dlp
-  - package: firewall-config
-  - package: dropbox
-
-  - package: profile-sync-daemon
-
-  # org.gnome.Loupe org.gnome.Photos
-  - package: org.gnome.Calendar
-    manager: flatpak
-  - package: org.pulseaudio.pavucontrol
-    manager: flatpak
-  - package: org.mozilla.firefox
-    manager: flatpak
-  - package: com.google.Chrome
-    manager: flatpak
-  - package: org.gnome.Evince
-    manager: flatpak
-  - package: org.chromium.Chromium
-    manager: flatpak
-  - package: org.audacityteam.Audacity
-    manager: flatpak
-  - package: org.gimp.GIMP
-    manager: flatpak
-  - package: io.mpv.Mpv
-    manager: flatpak
-  - package: org.rncbc.qpwgraph
-    purpose: Audio input-output connections using graph
-    manager: flatpak
-  - package: org.pipewire.Helvum
-    purpose: Audio input-output connections using graph
-    manager: flatpak
-  - package: nl.hjdskes.gcolor3
-    manager: flatpak
-  - package: com.github.tchx84.Flatseal
-    manager: flatpak
-  - package: io.github.flattool.Warehouse
-    manager: flatpak
-  - package: com.github.xournalpp.xournalpp
-    purpose: Handwriting
-    manager: flatpak
-  - package: net.cozic.joplin_desktop
-    purpose: Note taking application
-    manager: flatpak
-  - package: org.gnome.gThumb
-    manager: flatpak
-  - package: com.obsproject.Studio
-    manager: flatpak
-  - package: org.gnome.gitlab.YaLTeR.VideoTrimmer
-    manager: flatpak
-  - package: org.gnome.SoundRecorder
-    manager: flatpak
-  - package: hu.irl.cameractrls
-    manager: flatpak
-  - package: com.transmissionbt.Transmission
-    manager: flatpak
-  - package: com.stremio.Stremio
-    manager: flatpak
-  - package: org.signal.Signal
-    manager: flatpak
-  - package: com.discordapp.Discord
-    manager: flatpak
-  - package: com.skype.Client
-    manager: flatpak
-  - package: com.spotify.Client
-    manager: flatpak
-  - package: org.mozilla.Thunderbird
+  - package:
+      - ca.desrt.dconf-editor
+      - com.discordapp.Discord
+      - com.github.tchx84.Flatseal
+      - com.github.xournalpp.xournalpp
+      - com.google.Chrome
+      - com.obsproject.Studio
+      - com.skype.Client
+      - com.spotify.Client
+      - com.stremio.Stremio
+      - com.transmissionbt.Transmission
+      - hu.irl.cameractrls
+      - io.github.celluloid_player.Celluloid
+      - io.github.fabrialberio.pinapp
+      - io.github.flattool.Warehouse
+      - io.mpv.Mpv
+      - net.cozic.joplin_desktop
+      - nl.hjdskes.gcolor3
+      - org.audacityteam.Audacity
+      - org.chromium.Chromium
+      - org.gimp.GIMP
+      - org.gnome.baobab
+      - org.gnome.Calculator
+      - org.gnome.Calendar
+      - org.gnome.Characters
+      - org.gnome.clocks
+      # - org.gnome.Connections
+      - org.gnome.Contacts
+      - org.gnome.Evince
+      - org.gnome.font-viewer
+      - org.gnome.gitlab.YaLTeR.VideoTrimmer
+      - org.gnome.gThumb
+      - org.gnome.Logs
+      - org.gnome.Loupe
+      - org.gnome.Maps
+      - org.gnome.NautilusPreviewer
+      - org.gnome.SimpleScan
+      - org.gnome.Snapshot
+      - org.gnome.SoundRecorder
+      - org.gnome.TextEditor
+      - org.gnome.Weather
+      - org.mozilla.firefox
+      - org.mozilla.Thunderbird
+      - org.pulseaudio.pavucontrol
+      - org.rncbc.qpwgraph
+      - org.signal.Signal
     manager: flatpak
 
 post_install:
   run:
     - systemctl --user enable psd.service
+
+remove:
+  - abiword
+  - mediawriter
+  - firefox
+  - firefox-langpacks
+  - fedora-chromium-config
+  - baobab
+  - blueman-nautilus
+  - cheese
+  - eog
+  - evince
+  - gnome-boxes
+  - gnome-calculator
+  - gnome-calendar
+  - gnome-characters
+  - gnome-clocks
+  - gnome-connections
+  - gnome-contacts
+  - gnome-extensions-app
+  - gnome-font-viewer
+  - gnome-help
+  - gnome-logs
+  - gnome-maps
+  - gnome-photos
+  - gnome-shell-extension-window-list
+  - gnome-text-editor
+  - gnome-tour
+  - gnome-weather
+  - loupe
+  - rhythmbox
+  - simple-scan
+  - totem

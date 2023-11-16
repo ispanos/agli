@@ -151,5 +151,6 @@ My `defaults` are merged with `vars` by overriding all string values, and extend
 - Create a CLI interface.
   - Add flag to specify the `vars` directory location.
 - Add tests
+- Add better documentation on the "current_user" variable and how it can cause crashes with "ValueError: unexpected '\{' in field name" errors.
 
 If you want to contribute to this repository, maybe you could help me write some tests. Docker cannot be used to test everything this script does.

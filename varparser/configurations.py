@@ -197,10 +197,13 @@ class Configurations:
             return None
         # TODO: 'if "current_user" in line' is a bodge to avoid "ValueError: unexpected '{' in field name" errors
         # If {current_user} is in the same line with another curly bracket, it won't work.
-        return [
-            line.format(current_user=self.current_user)
-            for line in self._config[state]['run'] if "current_user" in line
-        ]
+        lines = []
+        for line in self._config[state]['run']:
+            if "current_user" in line:
+                lines.append(line.format(current_user=self.current_user))
+                continue
+            lines.append(line)
+        return lines
 
     def get_files(self, state):
         if not state in self._config:

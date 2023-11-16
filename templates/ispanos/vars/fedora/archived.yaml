@@ -1,4 +1,13 @@
 ---
+# SyncThingy            com.github.zocker_160.SyncThingy
+# Black Box             com.raggesilver.BlackBox
+# Mission Center        io.missioncenter.MissionCenter
+# Cockpit Client        org.cockpit_project.CockpitClient
+# Fedora Media Writer   org.fedoraproject.MediaWriter
+# Déjà Dup Backups      org.gnome.DejaDup
+# Font Downloader       org.gustavoperedo.FontDownloader
+# LocalSend             org.localsend.localsend_app
+
 # nextcloud
 packages:
   - nextcloud-client nextcloud-client-nautilus

@@ -9,7 +9,61 @@ packages:
   - nautilus-dropbox
   - seahorse-nautilus
   - wofi
+
+  - package:
+      - nl.hjdskes.gcolor3
+      - org.gnome.baobab
+      - org.gnome.Calculator
+      - org.gnome.Calendar
+      - org.gnome.Characters
+      - org.gnome.clocks
+      # - org.gnome.Connections
+      - org.gnome.Contacts
+      - org.gnome.Evince
+      - org.gnome.font-viewer
+      - org.gnome.gitlab.YaLTeR.VideoTrimmer
+      - org.gnome.gThumb
+      - org.gnome.Logs
+      - org.gnome.Loupe
+      - org.gnome.Maps
+      - org.gnome.NautilusPreviewer
+      - org.gnome.SimpleScan
+      - org.gnome.Snapshot
+      - org.gnome.SoundRecorder
+      - org.gnome.TextEditor
+      - org.gnome.Weather
+    manager: flatpak
+
+
   - package:
       - com.mattjakeman.ExtensionManager
       - io.github.realmazharhussain.GdmSettings
     manager: flatpak
+
+remove:
+  - baobab
+  - blueman-nautilus
+  - cheese
+  - eog
+  - evince
+  - gnome-boxes
+  - gnome-calculator
+  - gnome-calendar
+  - gnome-characters
+  - gnome-clocks
+  - gnome-connections
+  - gnome-contacts
+  - gnome-extensions-app
+  - gnome-font-viewer
+  - gnome-help
+  - gnome-logs
+  - gnome-maps
+  - gnome-photos
+  - gnome-shell-extension-window-list
+  - gnome-text-editor
+  - gnome-tour
+  - gnome-weather
+  - loupe
+  - rhythmbox
+  - simple-scan
+  - totem

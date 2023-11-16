@@ -7,6 +7,12 @@
 # Déjà Dup Backups      org.gnome.DejaDup
 # Font Downloader       org.gustavoperedo.FontDownloader
 # LocalSend             org.localsend.localsend_app
+# Audio Sharing         de.haeckerfelix.AudioSharing
+# Authenticator         com.belmoussaoui.Authenticator ?
+# Vorta (backup)        com.borgbase.Vorta
+# Pinta - (painting)    com.github.PintaProject.Pinta
+# Podman Desktop        io.podman_desktop.PodmanDesktop
+
 
 # nextcloud
 packages:

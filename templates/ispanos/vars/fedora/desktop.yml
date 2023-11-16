@@ -1,9 +1,4 @@
 ---
-pre_install:
-  run:
-    # Media libraries installed separetly to "allowerasing".
-    - sudo dnf install -y --allowerasing "@multimedia" lame gstreamer1-libav gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
-    # rpm-ostree install ffmpeg gstreamer1-plugin-libav gstreamer1-plugins-bad-free-extras gstreamer1-plugins-bad-freeworld gstreamer1-plugins-ugly gstreamer1-vaapi
 packages:
   - ddccontrol-gtk
   - dropbox
@@ -14,6 +9,7 @@ packages:
   - profile-sync-daemon
   - seahorse
   - solaar
+  - totem-video-thumbnailer
   - v4l2loopback
   - yaru-theme
   - yt-dlp
@@ -36,30 +32,9 @@ packages:
       - io.github.flattool.Warehouse
       - io.mpv.Mpv
       - net.cozic.joplin_desktop
-      - nl.hjdskes.gcolor3
       - org.audacityteam.Audacity
       - org.chromium.Chromium
       - org.gimp.GIMP
-      - org.gnome.baobab
-      - org.gnome.Calculator
-      - org.gnome.Calendar
-      - org.gnome.Characters
-      - org.gnome.clocks
-      # - org.gnome.Connections
-      - org.gnome.Contacts
-      - org.gnome.Evince
-      - org.gnome.font-viewer
-      - org.gnome.gitlab.YaLTeR.VideoTrimmer
-      - org.gnome.gThumb
-      - org.gnome.Logs
-      - org.gnome.Loupe
-      - org.gnome.Maps
-      - org.gnome.NautilusPreviewer
-      - org.gnome.SimpleScan
-      - org.gnome.Snapshot
-      - org.gnome.SoundRecorder
-      - org.gnome.TextEditor
-      - org.gnome.Weather
       - org.mozilla.firefox
       - org.mozilla.Thunderbird
       - org.pulseaudio.pavucontrol
@@ -70,6 +45,8 @@ packages:
 post_install:
   run:
     - systemctl --user enable psd.service
+    # Media libraries installed separetly to "allowerasing".
+    - sudo dnf install -y --allowerasing "@multimedia" lame gstreamer1-libav gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
 
 remove:
   - abiword
@@ -77,29 +54,3 @@ remove:
   - firefox
   - firefox-langpacks
   - fedora-chromium-config
-  - baobab
-  - blueman-nautilus
-  - cheese
-  - eog
-  - evince
-  - gnome-boxes
-  - gnome-calculator
-  - gnome-calendar
-  - gnome-characters
-  - gnome-clocks
-  - gnome-connections
-  - gnome-contacts
-  - gnome-extensions-app
-  - gnome-font-viewer
-  - gnome-help
-  - gnome-logs
-  - gnome-maps
-  - gnome-photos
-  - gnome-shell-extension-window-list
-  - gnome-text-editor
-  - gnome-tour
-  - gnome-weather
-  - loupe
-  - rhythmbox
-  - simple-scan
-  - totem

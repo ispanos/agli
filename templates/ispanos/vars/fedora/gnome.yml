@@ -1,17 +1,15 @@
 ---
 packages:
-  - package: gnome-shell-extension-caffeine
-  - package: gnome-shell-extension-gsconnect
-  - package: gnome-shell-extension-appindicator
-  - package: gnome-shell-extension-just-perfection
-  - package: com.mattjakeman.ExtensionManager
+  - file-roller-nautilus
+  - gnome-shell-extension-appindicator
+  - gnome-shell-extension-caffeine
+  - gnome-shell-extension-gsconnect
+  - gnome-shell-extension-just-perfection
+  - gnome-tweaks
+  - nautilus-dropbox
+  - seahorse-nautilus
+  - wofi
+  - package:
+      - com.mattjakeman.ExtensionManager
+      - io.github.realmazharhussain.GdmSettings
     manager: flatpak
-  - package: gnome-tweaks
-  - package: io.github.realmazharhussain.GdmSettings
-    manager: flatpak
-  - package: wofi
-  - package: playerctl
-  - package: nautilus-dropbox
-  - package: file-roller-nautilus
-  - package: seahorse
-  - package: seahorse-nautilus

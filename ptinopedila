@@ -129,6 +129,12 @@ def main(args):
 
     log_time()
 
+    clone_dotfiles(config.current_user, config.dotfiles_repo)
+    change_hostname(config.hostname)
+
+    # Added here to avoid installing unneeded dependencies.
+    package.remove(config.junk)
+
     run_commands(config.pre_install_commands)
 
     create_files(config.pre_install_files)
@@ -141,11 +147,8 @@ def main(args):
 
     create_files(config.post_install_files)
 
+    # Added here in case some junk got installed.
     package.remove(config.junk)
-
-    change_hostname(config.hostname)
-
-    clone_dotfiles(config.current_user, config.dotfiles_repo)
 
     log_time()
 

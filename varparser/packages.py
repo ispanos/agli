@@ -2,7 +2,7 @@ from varparser.parser import get_variables
 from typing import List, Optional, TypedDict
 
 
-config = get_variables()
+# config = get_variables()
 
 
 class RawPackages(list):

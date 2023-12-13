@@ -5,9 +5,6 @@ pre_install:
   run:
   files:
 prerequisite_packages:
-  - flatpak
-  - manager: flatpak
-    repository: flathub https://flathub.org/repo/flathub.flatpakrepo
 packages:
 remove:
 post_install:

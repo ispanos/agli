@@ -17,6 +17,11 @@ pre_install:
         sudo localectl set-locale LC_TIME=en_GB.UTF-8
         sudo localectl set-locale LC_NUMERIC=en_US.UTF-8
 
+prerequisite_packages:
+  - flatpak
+  - manager: flatpak
+    repository: flathub https://flathub.org/repo/flathub.flatpakrepo
+
 post_install:
   run:
     - chsh {current_user} -s /usr/bin/zsh
@@ -25,4 +30,3 @@ post_install:
         /usr/bin/git --git-dir=/home/{current_user}/.cfg/
         --work-tree=/home/{current_user} update-index
         --assume-unchanged /home/{current_user}/.config/sway/config || echo ''
-

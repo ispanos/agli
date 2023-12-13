@@ -79,11 +79,15 @@ def parse_os_release() -> dict:
         return os_release_info
 
 
-def get_variables(included_files_arg: List[str] = None) -> dict:
+def get_variables(included_files_arg: List[str] = None, default_only=True) -> dict:
 
     # Load and merge the default and main config files
 
     top_config = list(CONFIG_FILES)
+
+    if default_only:
+        top_config = [CONFIG_FILES[0]]
+
     if included_files_arg:
         top_config.extend(find_yaml_files(included_files_arg))
 

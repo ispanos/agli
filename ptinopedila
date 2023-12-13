@@ -178,6 +178,12 @@ if __name__ == "__main__":
         help='When in dry-run mode, print configs with color.'
     )
 
+    parser.add_argument(
+        '--no-main',
+        action='store_true',
+        help='When used with -i/--include, ignore all main.yaml files.'
+    )
+
     args = parser.parse_args()
 
     main(args)

@@ -108,7 +108,7 @@ packages:
 prerequisite_packages:
 ```
 
-Is a list with the same syntax as `packages:` and can be used to install some packages before the rest. In `defaults/main.yaml` you can see that I use it to install flatpak and the 'flathub' remote. This way, I can be sure that packages from flathub will be installed without an issue. You can also see in my `vars` *template* that I use it to install `dnf` repositories (such as RPM Fusion).
+Is a list with the same syntax as `packages:` and can be used to install some packages before the rest.
 
 ```yaml
 pre_install:

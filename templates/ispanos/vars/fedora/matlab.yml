@@ -1,5 +1,6 @@
 ---
 packages:
+  - libxcrypt-compat # provides libcrypt.so.1
   - package: gcc
     purpose: Needed compiler
   - package: gcc-g++

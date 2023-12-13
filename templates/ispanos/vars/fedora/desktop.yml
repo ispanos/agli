@@ -3,15 +3,13 @@ packages:
   - ddccontrol-gtk
   - dropbox
   - firewall-config
-  - lame
   - libva-utils
   - playerctl
-  - profile-sync-daemon
+  # - profile-sync-daemon
   - seahorse
   - solaar
-  - totem-video-thumbnailer
+  - totem-video-thumbnailer 
   - v4l2loopback
-  - yaru-theme
   - yt-dlp
   # - input-leap
 
@@ -20,6 +18,7 @@ packages:
       - com.discordapp.Discord
       - com.github.tchx84.Flatseal
       - com.github.xournalpp.xournalpp
+      - com.github.wwmm.easyeffects
       - com.google.Chrome
       - com.obsproject.Studio
       - com.skype.Client

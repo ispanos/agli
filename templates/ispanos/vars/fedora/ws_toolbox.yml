@@ -1,0 +1,66 @@
+---
+# Fedora WS toolbox
+
+prerequisite_packages:
+  - fedora-workstation-repositories
+  - https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+  - https://mirrors.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
+
+pre_install:
+  run:
+    - >
+      grep 'max_parallel_downloads=10' /etc/dnf/dnf.conf ||
+      echo 'max_parallel_downloads=10' |
+      sudo tee -a /etc/dnf/dnf.conf
+    - >
+      grep 'defaultyes=True' /etc/dnf/dnf.conf ||
+      echo 'defaultyes=True' |
+      sudo tee -a /etc/dnf/dnf.conf
+    - sudo dnf update @core -y
+
+packages:
+  - bat
+  - cmake
+  - dialog
+  - fd-find
+  - fontawesome-fonts-web
+  - fzf
+  - git
+  - git-lfs
+  - google-carlito-fonts
+  - htop
+  - jq
+  - lsd
+  - mediainfo
+  - neovim
+  - npm
+  - openssl
+  - p7zip
+  - pdftk-java
+  - pv
+  - python3-autopep8
+  - python3-matplotlib
+  - python3-nbconvert # Converting Jupyter Notebooks - requires pandoc
+  - python3-numpy
+  - python3-pandas
+  - python3-pylint
+  - python3-pyyaml
+  - python3-seaborn
+  - python3-sphinx # Python documentation generator
+  - python3-tqdm
+  - qpdf
+  - ShellCheck
+  - sqlite
+  - sqlitebrowser
+  - yamllint
+  - zsh
+  - zsh-autosuggestions
+  - zsh-syntax-highlighting
+
+include:
+  - vars/fedora/dynare.yml
+  - vars/fedora/julia.yml
+  - vars/fedora/matlab.yml
+  - vars/fedora/r.yml
+  - vars/fedora/stata.yml
+  - vars/fedora/tex.yml

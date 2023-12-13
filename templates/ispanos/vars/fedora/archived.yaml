@@ -12,7 +12,7 @@
 # Vorta (backup)        com.borgbase.Vorta
 # Pinta - (painting)    com.github.PintaProject.Pinta
 # Podman Desktop        io.podman_desktop.PodmanDesktop
-
+# Burnin fix            io.github.vinser.burnfix
 
 # nextcloud
 packages:

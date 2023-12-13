@@ -35,16 +35,19 @@ pre_install:
       enable_iommu || exit 1
 
 packages:
-  # --setopt=install_weak_deps=False
   - bat
-  - lsd
   - fontawesome-fonts-web
+  - fzf
+  - git-lfs # Replaces large files with text pointers inside Git, while storing the file contents on a remote server.
   - google-carlito-fonts
   - hddtemp
   - htop
+  - jq
   - lm_sensors
+  - lsd
   - lshw
   - mediainfo
+  - neovim
   - nvme-cli
   - openssh
   - openssl
@@ -53,8 +56,20 @@ packages:
   - procs
   - pv
   - smartmontools
-  - package: util-linux-user
-    purpose: Provides `chsh` to change to zsh
+  - util-linux-user # Provides `chsh` to change to zsh
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+  # --setopt=install_weak_deps=False
+
+remove:
+  - libavcodec-free
+  - libavdevice-free
+  - libavfilter-free
+  - libavformat-free
+  - libavutil-free
+  - libpostproc-free
+  - libswresample-free
+  - libswscale-free
+  - mesa-va-drivers
+  - google-noto-sans-cjk-vf-font

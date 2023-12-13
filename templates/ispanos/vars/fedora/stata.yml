@@ -1,11 +1,11 @@
 ---
 packages:
+  - gtk2
   - libpng12
-  - ncurses-devel
-  - adwaita-gtk2-theme
+  - ncurses-devel # CLI
   # - PackageKit-gtk3-module
 
 post_install:
   run:
-    # - sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5
-    - sudo ln -s /usr/lib64/libncurses.so /usr/lib64/libncurses.so.5
+    - sudo ln -s /usr/lib64/libncurses.so.6 /usr/lib64/libncurses.so.5
+    # - sudo ln -s /usr/lib64/libncurses.so /usr/lib64/libncurses.so.5

@@ -14,42 +14,33 @@ pre_install:
 
 packages:
   - "@virtualization"
+  - cmake
+  - code
+  - nmap
+  - pdftk-java # Editing pdf files
+  - podman-docker
+  - qpdf # Editing pdf files
   - spice-gtk
-  - package: podman-docker
-  - package: neovim
-  - package: code
+  - dialog
 
-  - package: cmake
+  # May be moved to a toolbox
   - package: dialog
   - package: fd-find
-  - package: fzf
-  - package: git-lfs
-    purpose: Replaces large files with text pointers inside Git, while storing the file contents on a remote server.
-  - package: jq
-  - package: nmap
   - package: npm
+  - package: python3-autopep8
+  - package: python3-matplotlib
+  - package: python3-nbconvert # Converting Jupyter Notebooks - requires pandoc
+  - package: python3-numpy
+  - package: python3-pandas
+  - package: python3-pylint
+  - package: python3-pyyaml
+  - package: python3-seaborn
+  - package: python3-sphinx # Python documentation generator
+  - package: python3-tqdm
   - package: ShellCheck
   - package: sqlite
   - package: sqlitebrowser
-
   - package: yamllint
-  - package: python3-autopep8
-  - package: python3-matplotlib
-  - package: python3-numpy
-  - package: python3-tqdm
-  - package: python3-pandas
-  - package: python3-pylint
-  - package: python3-seaborn
-  - package: python3-pyyaml
-  - package: python3-sphinx
-    purpose: Python documentation generator
-  - package: python3-nbconvert
-    purpose: Converting Jupyter Notebooks - requires pandoc
-
-  - package: pdftk-java
-    purpose: Editing pdf files
-  - package: qpdf
-    purpose: Editing pdf files
 
   - package:
       - com.anydesk.Anydesk
@@ -59,7 +50,6 @@ packages:
       - org.gnome.gitg
       - org.remmina.Remmina
       - org.zotero.Zotero
-      - RDP and VNC client
     manager: flatpak
 
 post_install:

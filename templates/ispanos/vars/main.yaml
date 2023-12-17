@@ -24,7 +24,7 @@ prerequisite_packages:
 
 post_install:
   run:
-    - chsh {current_user} -s /usr/bin/zsh
+    - sudo usermod {current_user} --shell /usr/bin/zsh
     - sudo sed -i 's/^#AutoEnable=true/AutoEnable=false/' /etc/bluetooth/main.conf
     - >
         /usr/bin/git --git-dir=/home/{current_user}/.cfg/

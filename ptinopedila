@@ -117,8 +117,7 @@ def main(args):
 
     if os.path.exists("log.txt"):
         os.remove("log.txt")
-
-    config = get_variables(args.include)
+    config = get_variables(args.include, args.no_main)
     config = Configurations(config)
     package = PackageManager(config)
 

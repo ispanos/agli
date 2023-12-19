@@ -79,7 +79,7 @@ def parse_os_release() -> dict:
         return os_release_info
 
 
-def get_variables(included_files_arg: List[str] = None, default_only=True) -> dict:
+def get_variables(included_files_arg: List[str] = None, default_only=False) -> dict:
 
     # Load and merge the default and main config files
 

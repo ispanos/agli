@@ -1,0 +1,165 @@
+title: Welcome to Ptinopedila-yafti
+properties:
+  mode: "run-once"
+actions:
+  pre:
+    - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
+  # post:
+  #   - run: /run/these/commands --after --all --screens
+screens:
+  first-screen:
+    source: yafti.screen.title
+    values:
+      title: "Welcome to Ptinopedila-yafti (Beta)"
+      icon: "/path/to/icon"
+      description: |
+        Applications are also installing in the background, the system will notify you when it is finished.
+
+  can-we-modify-your-flatpaks:
+    source: yafti.screen.consent
+    values:
+      title: Lets fix the Flatpak remotes
+      condition:
+        run: flatpak remotes --system | grep fedora
+      description: |
+        This tool modifies your flatpaks and flatpak sources. If you do not want to do this exit the installer.
+        For new users just do it (tm)
+      actions:
+        - run: flatpak remote-modify fedora --disable
+        - run: flatpak remote-modify fedora-testing --disable
+
+  applications:
+    source: yafti.screen.package
+    values:
+      title: Application Installation
+      show_terminal: true
+      package_manager: yafti.plugin.flatpak
+      package_manager_defaults:
+        user: false
+        system: true
+      groups:
+        Desktop:
+          description: Desktop Utilities
+          default: true
+          packages:
+            - Audacity: org.audacityteam.Audacity
+            - Camera Controls: hu.irl.cameractrls
+            - Celluloid media player: io.github.celluloid_player.Celluloid
+            - Chrome: com.google.Chrome
+            - Chromium: org.chromium.Chromium
+            - Dconf editor: ca.desrt.dconf-editor
+            - Discord: com.discordapp.Discord
+            - Easy Effects: com.github.wwmm.easyeffects
+            - Firefox: org.mozilla.firefox
+            - Flatseal: com.github.tchx84.Flatseal
+            - GIMP: org.gimp.GIMP
+            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
+            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
+            - Joplin: net.cozic.joplin_desktop
+            - Mission Cencter: io.missioncenter.MissionCenter
+            - Mpv: io.mpv.Mpv
+            - OBS Studio: com.obsproject.Studio
+            - PinApp Menu Editor: io.github.fabrialberio.pinapp
+            - qpwgraph: org.rncbc.qpwgraph
+            - Signal: org.signal.Signal
+            - Skype: com.skype.Client
+            - Spotify: com.spotify.Client
+            - Stremio: com.stremio.Stremio
+            - Thunderbird: org.mozilla.Thunderbird
+            - Transmission: com.transmissionbt.Transmission
+            - VkCapture for OBS: ccom.obsproject.Studio.Plugin.OBSVkCapture
+            - Volume controls: org.pulseaudio.pavucontrol
+            - Warehouse for flatpaks: io.github.flattool.Warehouse
+            - Xournal++: com.github.xournalpp.xournalpp
+        Gnome:
+          description: Gnome things
+          default: true
+          packages:
+            - Extension Manager: com.mattjakeman.ExtensionManager
+            - Gdm Settings: io.github.realmazharhussain.GdmSettings
+            - Color Picker: nl.hjdskes.gcolor3
+            - Disk Usage Analyzer: org.gnome.baobab
+            - Calculator: org.gnome.Calculator
+            - Calendar: org.gnome.Calendar
+            - Characters: org.gnome.Characters
+            - clocks: org.gnome.clocks
+            - Contacts: org.gnome.Contacts
+            - Evince: org.gnome.Evince
+            - Font Viewer: org.gnome.font-viewer
+            - VideoTrimmer: org.gnome.gitlab.YaLTeR.VideoTrimmer
+            - gThumb: org.gnome.gThumb
+            - Logs: org.gnome.Logs
+            - Image Viewer: org.gnome.Loupe
+            - Maps: org.gnome.Maps
+            - Nautilus Previewer: org.gnome.NautilusPreviewer
+            - Simple Scan: org.gnome.SimpleScan
+            - Camera: org.gnome.Snapshot
+            - Sound Recorder: org.gnome.SoundRecorder
+            - TextEditor: org.gnome.TextEditor
+            - Weather: org.gnome.Weather
+            - adw-gtk3: org.gtk.Gtk3theme.adw-gtk3
+            - adw-gtk3-dark: org.gtk.Gtk3theme.adw-gtk3-dark
+            # - Connections : org.gnome.Connections
+        Workstation:
+          description: Tools for work
+          default: true
+          packages:
+            - Anydesk: com.anydesk.Anydesk
+            - Calibre: com.calibre_ebook.calibre
+            - OBS Studio: com.obsproject.Studio
+            - VkCapture for OBS: com.obsproject.Studio.OBSVkCapture
+            - Gstreamer for OBS: com.obsproject.Studio.Plugin.Gstreamer
+            - Gstreamer VAAPI for OBS: com.obsproject.Studio.Plugin.GStreamerVaapi
+            - Obsidian: md.obsidian.Obsidian
+            - gitg: org.gnome.gitg
+            - Remmina: org.remmina.Remmina
+            - Zotero: org.zotero.Zotero
+        Laptop:
+          description: Laptop things
+          default: false
+          packages:
+            - GNOME Power Statistics: org.gnome.PowerStats
+            - TLP UI: com.github.d4nj1.tlpui
+        Gaming:
+          description: Game Launchers and tools
+          default: false
+          packages:
+            - Bottles: com.usebottles.bottles
+            - gamescope: com.valvesoftware.Steam.Utility.gamescope
+            - Heroic Games Launcher: com.heroicgameslauncher.hgl
+            - MangoHUD: org.freedesktop.Platform.VulkanLayer.MangoHud//22.08
+            - Proton Plus for Steam: com.vysp3r.ProtonPlus
+            - ProtonUp-Qt: net.davidotek.pupgui2
+            - Steam: com.valvesoftware.Steam
+        Extras:
+          description: Extra packages
+          default: false
+          packages:
+            - SyncThingy : com.github.zocker_160.SyncThingy
+            - Black Box : com.raggesilver.BlackBox
+            - Mission Center : io.missioncenter.MissionCenter
+            - Cockpit Client : org.cockpit_project.CockpitClient
+            - Fedora Media Writer : org.fedoraproject.MediaWriter
+            - Déjà Dup Backups : org.gnome.DejaDup
+            - Font Downloader : org.gustavoperedo.FontDownloader
+            - LocalSend : org.localsend.localsend_app
+            - Audio Sharing : de.haeckerfelix.AudioSharing
+            - Authenticator : com.belmoussaoui.Authenticator ?
+            - Vorta (backup) : com.borgbase.Vorta
+            - Pinta - (painting) : com.github.PintaProject.Pinta
+            - Podman Desktop : io.podman_desktop.PodmanDesktop
+            - Burnin fix : io.github.vinser.burnfix
+  final-screen:
+    source: yafti.screen.title
+    values:
+      title: "All done!"
+      icon: "/path/to/icon"
+      links:
+        - "Install More Applications":
+            run: /usr/bin/gnome-software
+        - "My github, the curator of the list":
+            run: /usr/bin/xdg-open https://github.com/ispanos
+        - "Yafti":
+            run: /usr/bin/xdg-open https://github.com/ublue-os/yafti
+      description: |
+        Have fun now.

@@ -2,8 +2,6 @@
 packages:
   - tlp
   - tlp-rdw
-  - package: com.github.d4nj1.tlpui
-    manager: flatpak
 
 post_install:
   run:

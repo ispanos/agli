@@ -1,15 +1,6 @@
 ---
 packages:
-  - package: org.gnome.gThumb
-    manager: flatpak
-  - package: google-chrome-stable
-  - package: zathura
-    purpose: A secondary pdf reader as Gnome's document viewer does not allow openning the same pdf twice.
-  - package: zathura-djvu
-  - package: zathura-pdf-mupdf
-  - package: zathura-zsh-completion
   - package: firewall-config
-  - package: wine
 
 include:
   - vars/fedora/dynare.yml

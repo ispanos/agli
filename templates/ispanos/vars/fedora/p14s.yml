@@ -8,8 +8,6 @@ packages:
   - intel-gpu-tools
   - intel-media-driver
   - powertop
-  - package: org.gnome.PowerStats
-    manager: flatpak
   # The following need interaction
   # - org.freedesktop.Platform.GStreamer.gstreamer-vaapi
   # - com.obsproject.Studio.Plugin.Gstreamer

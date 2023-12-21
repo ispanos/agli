@@ -1,11 +1,7 @@
 title: Welcome to Ptinopedila-yafti
 properties:
   mode: "run-once"
-actions:
-  pre:
-    - run: flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
-  # post:
-  #   - run: /run/these/commands --after --all --screens
+
 screens:
   first-screen:
     source: yafti.screen.title
@@ -18,15 +14,18 @@ screens:
   can-we-modify-your-flatpaks:
     source: yafti.screen.consent
     values:
-      title: Lets fix the Flatpak remotes
+      title: Remove fedora remote and add the flathub remote for --system
       condition:
-        run: flatpak remotes --system | grep fedora
+        run: /usr/bin/flatpak remotes --system | /usr/bin/grep -q fedora || { /usr/bin/flatpak remotes --system | /usr/bin/grep -q 'flathub' && exit 1 || exit 0; }
       description: |
         This tool modifies your flatpaks and flatpak sources. If you do not want to do this exit the installer.
         For new users just do it (tm)
       actions:
-        - run: flatpak remote-modify fedora --disable
-        - run: flatpak remote-modify fedora-testing --disable
+        - run: /usr/bin/flatpak remote-delete fedora --force --system || true
+        - run: /usr/bin/flatpak remote-delete fedora --force --user || true
+        - run: /usr/bin/flatpak remote-delete fedora-testing --force --system || true
+        - run: /usr/bin/flatpak remote-delete fedora-testing --force --user || true
+        - run: /usr/bin/flatpak remote-add --if-not-exists --system flathub https://flathub.org/repo/flathub.flatpakrepo
 
   applications:
     source: yafti.screen.package
@@ -135,20 +134,20 @@ screens:
           description: Extra packages
           default: false
           packages:
-            - SyncThingy : com.github.zocker_160.SyncThingy
-            - Black Box : com.raggesilver.BlackBox
-            - Mission Center : io.missioncenter.MissionCenter
-            - Cockpit Client : org.cockpit_project.CockpitClient
-            - Fedora Media Writer : org.fedoraproject.MediaWriter
-            - Déjà Dup Backups : org.gnome.DejaDup
-            - Font Downloader : org.gustavoperedo.FontDownloader
-            - LocalSend : org.localsend.localsend_app
-            - Audio Sharing : de.haeckerfelix.AudioSharing
-            - Authenticator : com.belmoussaoui.Authenticator ?
-            - Vorta (backup) : com.borgbase.Vorta
-            - Pinta - (painting) : com.github.PintaProject.Pinta
-            - Podman Desktop : io.podman_desktop.PodmanDesktop
-            - Burnin fix : io.github.vinser.burnfix
+            - SyncThingy: com.github.zocker_160.SyncThingy
+            - Black Box: com.raggesilver.BlackBox
+            - Mission Center: io.missioncenter.MissionCenter
+            - Cockpit Client: org.cockpit_project.CockpitClient
+            - Fedora Media Writer: org.fedoraproject.MediaWriter
+            - Déjà Dup Backups: org.gnome.DejaDup
+            - Font Downloader: org.gustavoperedo.FontDownloader
+            - LocalSend: org.localsend.localsend_app
+            - Audio Sharing: de.haeckerfelix.AudioSharing
+            - Authenticator: com.belmoussaoui.Authenticator ?
+            - Vorta (backup): com.borgbase.Vorta
+            - Pinta - (painting): com.github.PintaProject.Pinta
+            - Podman Desktop: io.podman_desktop.PodmanDesktop
+            - Burnin fix: io.github.vinser.burnfix
   final-screen:
     source: yafti.screen.title
     values:

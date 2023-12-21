@@ -36,17 +36,14 @@ pre_install:
 
 packages:
   - bat
-  - fontawesome-fonts-web
   - fzf
   - git-lfs # Replaces large files with text pointers inside Git, while storing the file contents on a remote server.
-  - google-carlito-fonts
   - hddtemp
   - htop
   - jq
   - lm_sensors
   - lsd
   - lshw
-  - mediainfo
   - neovim
   - nvme-cli
   - openssh
@@ -56,10 +53,12 @@ packages:
   - procs
   - pv
   - smartmontools
-  - util-linux-user # Provides `chsh` to change to zsh
   - zsh
   - zsh-autosuggestions
   - zsh-syntax-highlighting
+  - nvtop
+  - vim
+  - just
   # --setopt=install_weak_deps=False
 
 remove:

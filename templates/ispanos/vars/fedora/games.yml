@@ -1,23 +1,9 @@
 ---
 packages:
   # - wine
-
-  - package: gperftools-libs
-    purpose: Needed for CS:GO
-
-  - package: com.usebottles.bottles
-    manager: flatpak
-  - package: com.heroicgameslauncher.hgl
-    manager: flatpak
-  - package: com.valvesoftware.Steam
-    manager: flatpak
-  - package: com.valvesoftware.Steam.Utility.gamescope
-    manager: flatpak
-
+  # - package: gperftools-libs
+  #   purpose: Needed for CS:GO
   # - package: xpadneo
   #   purpose: Xbox one controller driver
   #   repository: sentry/xpadneo
   #   # https://atar-axis.github.io/xpadneo/
-
-  - package: net.davidotek.pupgui2
-    manager: flatpak

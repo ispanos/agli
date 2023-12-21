@@ -58,9 +58,6 @@ packages:
   - package: wev
     purpose: Keybind finder
 
-  - package: org.pulseaudio.pavucontrol
-    manager: flatpak
-
 post_install:
   run:
     - sudo usermod -a -G input {current_user}

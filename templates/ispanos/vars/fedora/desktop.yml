@@ -1,51 +1,35 @@
 ---
 packages:
+  - alsa-firmware
   - ddccontrol-gtk
+  - distrobox
   - dropbox
+  - ffmpegthumbnailer
   - firewall-config
+  - fontawesome-fonts-web
+  - google-carlito-fonts
+  - google-noto-sans-balinese-fonts
+  - google-noto-sans-cjk-fonts
+  - google-noto-sans-javanese-fonts
+  - google-noto-sans-sundanese-fonts
+  - libratbag-ratbagd
   - libva-utils
+  - mediainfo
+  - mesa-va-drivers-freeworld
+  - openrgb-udev-rules
   - playerctl
-  # - profile-sync-daemon
   - seahorse
   - solaar
-  - totem-video-thumbnailer 
+  - totem-video-thumbnailer
   - v4l2loopback
-  - yt-dlp
   # - input-leap
-
-  - package:
-      - ca.desrt.dconf-editor
-      - com.discordapp.Discord
-      - com.github.tchx84.Flatseal
-      - com.github.xournalpp.xournalpp
-      - com.github.wwmm.easyeffects
-      - com.google.Chrome
-      - com.obsproject.Studio
-      - com.skype.Client
-      - com.spotify.Client
-      - com.stremio.Stremio
-      - com.transmissionbt.Transmission
-      - hu.irl.cameractrls
-      - io.github.celluloid_player.Celluloid
-      - io.github.fabrialberio.pinapp
-      - io.github.flattool.Warehouse
-      - io.mpv.Mpv
-      - net.cozic.joplin_desktop
-      - org.audacityteam.Audacity
-      - org.chromium.Chromium
-      - org.gimp.GIMP
-      - org.mozilla.firefox
-      - org.mozilla.Thunderbird
-      - org.pulseaudio.pavucontrol
-      - org.rncbc.qpwgraph
-      - org.signal.Signal
-    manager: flatpak
+  # - profile-sync-daemon
 
 post_install:
   run:
-    - systemctl --user enable psd.service
+    # - systemctl --user enable psd.service
     # Media libraries installed separetly to "allowerasing".
-    - sudo dnf install -y --allowerasing "@multimedia" lame gstreamer1-libav gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
+    - sudo dnf install -y --allowerasing --setopt=install_weak_deps=False "@multimedia" lame gstreamer1-libav gstreamer1-plugins-{bad-\*,good-\*,base,ugly\*} -x gstreamer1-plugins-bad-free-devel
 
 remove:
   - abiword
@@ -53,3 +37,4 @@ remove:
   - firefox
   - firefox-langpacks
   - fedora-chromium-config
+  - default-fonts-cjk-sans

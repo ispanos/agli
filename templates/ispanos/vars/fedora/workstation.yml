@@ -42,16 +42,6 @@ packages:
   - package: sqlitebrowser
   - package: yamllint
 
-  - package:
-      - com.anydesk.Anydesk
-      - com.calibre_ebook.calibre
-      - com.obsproject.Studio
-      - md.obsidian.Obsidian
-      - org.gnome.gitg
-      - org.remmina.Remmina
-      - org.zotero.Zotero
-    manager: flatpak
-
 post_install:
   run:
     - sudo usermod -a -G libvirt {current_user}

@@ -36,10 +36,3 @@ include:
   - vars/fedora/tex.yml
   - vars/fedora/workstation.yml
   # - vars/fedora/tlp.yml
-
-## Manual things:
-
-# - Matlab
-# - Stata
-# - aueb VPN
-# - allow older versions of TLS, for eduroam

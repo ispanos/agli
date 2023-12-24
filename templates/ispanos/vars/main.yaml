@@ -19,8 +19,8 @@ pre_install:
 
 prerequisite_packages:
   - flatpak
-  - manager: flatpak
-    repository: flathub https://flathub.org/repo/flathub.flatpakrepo
+  # - manager: flatpak
+  #   repository: flathub https://flathub.org/repo/flathub.flatpakrepo
 
 post_install:
   run:

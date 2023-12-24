@@ -6,11 +6,9 @@ prerequisite_packages:
 
 pre_install:
   run:
-    - flatpak remote-modify fedora --disable
-    - flatpak remote-modify fedora-testing --disable
     - >
-      grep 'max_parallel_downloads=10' /etc/dnf/dnf.conf ||
-      echo 'max_parallel_downloads=10' |
+      grep 'max_parallel_downloads=20' /etc/dnf/dnf.conf ||
+      echo 'max_parallel_downloads=20' |
       sudo tee -a /etc/dnf/dnf.conf
     - >
       grep 'defaultyes=True' /etc/dnf/dnf.conf ||
@@ -37,7 +35,6 @@ pre_install:
 packages:
   - bat
   - fzf
-  - git-lfs # Replaces large files with text pointers inside Git, while storing the file contents on a remote server.
   - hddtemp
   - htop
   - jq

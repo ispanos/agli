@@ -12,20 +12,13 @@ post_install:
 include:
   - vars/fedora/desktop.yml
   - vars/fedora/dynare.yml
-  # - vars/fedora/games.yml
   - vars/fedora/gnome.yml
   # - vars/fedora/grib.yml
   # - vars/fedora/ifort.yml
   - vars/fedora/julia.yml
-  - vars/fedora/g810.yml
   - vars/fedora/main.yml
   - vars/fedora/matlab.yml
   - vars/fedora/r.yml
   - vars/fedora/stata.yml
   - vars/fedora/tex.yml
   - vars/fedora/workstation.yml
-
-## Manual things:
-
-# - Matlab
-# - Stata

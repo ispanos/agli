@@ -22,6 +22,7 @@ packages:
   - qpdf # Editing pdf files
   - spice-gtk
   - dialog
+  - git-lfs # Replaces large files with text pointers inside Git, while storing the file contents on a remote server.
 
   # May be moved to a toolbox
   - package: dialog

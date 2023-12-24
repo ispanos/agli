@@ -1,4 +1,4 @@
-# AGLI - Another general linux installer
+# AGLI - Another generic linux installer
 
 ## Description
 

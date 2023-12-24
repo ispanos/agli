@@ -1,8 +1,8 @@
-# Ptinopedila (The birds of Mercury)
+# AGLI - Another general linux installer
 
 ## Description
 
-A turn-key solution to configure a Linux system (for the moment only works for Fedora). Ptinopedila uses configuration files written in `yaml` to adjust and expand the capabilities of the script.
+A turn-key solution to configure a Linux system (for the moment only works for Fedora). This script uses configuration files written in `yaml` to adjust and expand the capabilities of the script.
 
 For now, only basic functionality is scripted in python, but given enough demand from other users, or me, more can be added. However, I do not plan to re-write Ansible, I just want a quick way to configure a new system in a pinch.
 
@@ -139,10 +139,10 @@ Use the `include` field to add the path, or a list of paths of your yaml files.
 `include` field cannot be "nested", i.e. only `main.yaml` and files included using the `--include` argument can `include` other yaml files. The way the included files are merged is the same as the way `vars` merge with the `defaults` (see below).
 
 ```sh
-./ptinopedila --include <file>
+./main --include <file>
 ```
 
-Use the `--include/-i` flag to extend `main.yaml` without editing any files. Files that are added this way can themselves `include` more files. This way you can create yaml configurations for specific machines and use the "--include/-i" flag to use a custom-tailored set of configurations for this specific package. Or use `./ptinopedila --include x y z` to install a minimal set of configurations when you are spinning up a new system.
+Use the `--include/-i` flag to extend `main.yaml` without editing any files. Files that are added this way can themselves `include` more files. This way you can create yaml configurations for specific machines and use the "--include/-i" flag to use a custom-tailored set of configurations for this specific package. Or use `./main --include x y z` to install a minimal set of configurations when you are spinning up a new system.
 
 My `defaults` are merged with `vars` by overriding all string values, and extending lists. This is also applied for strings and lists in dictionaries. If you want to remove flatpak and the flathub remote from your configuration, you will have to remove them from the `defaults/main.yaml` file.
 

@@ -5,24 +5,14 @@ packages:
   # - nvidia-vaapi-driver
   - libva-nvidia-driver
   - libva-intel-driver
-  - intel-gpu-tools
   - intel-media-driver
   - powertop
-  # The following need interaction
-  # - org.freedesktop.Platform.GStreamer.gstreamer-vaapi
-  # - com.obsproject.Studio.Plugin.Gstreamer
-  # - org.freedesktop.Platform.VulkanLayer.OBSVkCapture
-  # - com.obsproject.Studio.Plugin.OBSVkCapture
 
 post_install:
   run:
     - >
       sudo install -Dm644
         vars/files/99-thinkpad-thresholds-polkit.rules /etc/polkit-1/rules.d/99-thinkpad-thresholds-polkit.rules
-    - |
-      sudo install -Dm644 vars/files/nvidia-pm/80-nvidia-pm.rules /lib/udev/rules.d/80-nvidia-pm.rules
-      sudo install -Dm755 vars/files/nvidia-pm/nvidia.conf /etc/modprobe.d/nvidia.conf
-      # http://us.download.nvidia.com/XFree86/Linux-x86_64/535.43.02/README/dynamicpowermanagement.html
     - sudo systemctl enable powertop.service
 
 include:

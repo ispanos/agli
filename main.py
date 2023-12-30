@@ -128,7 +128,7 @@ def main(args):
 
     log_time()
 
-    clone_dotfiles(config.current_user, config.dotfiles_repo)
+    clone_dotfiles(config.dotfiles_repo, config.current_user)
     change_hostname(config.hostname)
 
     # Added here to avoid installing unneeded dependencies.

@@ -1,11 +1,10 @@
-import getpass
 import os
 import tempfile
 
 from utils import execute_command, command_v, force_symlink, log_print
 
 
-def clone_dotfiles(user: str = None, repo: str = None) -> None:
+def clone_dotfiles(repo: str, user: str = None) -> None:
     """Clones dotfiles and places the in the user's home, but changes the name
     of --git-dir to ".cfg", to avoid nested git repositories in the home 
     directory. To make changes to the repo in the future, use the alias
@@ -24,12 +23,8 @@ def clone_dotfiles(user: str = None, repo: str = None) -> None:
         log_print("Cloning dotfiles requires git.")
         return
 
-    if not repo:
-        log_print("Skipping; dotfiles' repository was not defined.")
-        return
-
     if not user:
-        user = getpass.getuser()
+        user = os.getlogin()
 
     dir = tempfile.mkdtemp()
     dot = f"git --git-dir=\"{dir}/.cfg/\" --work-tree=\"{dir}\""

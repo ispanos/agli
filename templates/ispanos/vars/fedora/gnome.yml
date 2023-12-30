@@ -1,6 +1,7 @@
 ---
 packages:
   - adw-gtk3-theme
+  - baobab
   - file-roller-nautilus
   - gnome-shell-extension-appindicator
   - gnome-shell-extension-blur-my-shell
@@ -17,7 +18,6 @@ packages:
   - yaru-theme
 
 remove:
-  - baobab
   - blueman-nautilus
   - cheese
   - eog

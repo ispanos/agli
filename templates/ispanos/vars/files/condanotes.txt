@@ -1,6 +1,0 @@
-conda install -c r r-irkernel
-conda install -c conda-forge pyreadr
-
-Need to change `.libPaths()`. ????
-
-julia> Pkg.add("Ijulia")`

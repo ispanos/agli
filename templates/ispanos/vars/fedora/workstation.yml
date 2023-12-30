@@ -18,7 +18,7 @@ packages:
   - code
   - nmap
   - pdftk-java # Editing pdf files
-  - podman-docker
+  # - podman-docker
   - qpdf # Editing pdf files
   - spice-gtk
   - dialog

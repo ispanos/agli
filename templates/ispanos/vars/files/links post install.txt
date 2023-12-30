@@ -1,18 +1,31 @@
-# MANUALLY
+#!/bin/bash
 
-rmdir Videos Documents Pictures
+set -oue pipefail
+cd ~
+
+# DROPBOX_DIRS="$(locate -rb 'Dropbox$')"
+# echo $DROPBOX_DIRS
+
+DROPBOX_DIR="${DROPBOX_DIR:-$HOME/Dropbox}"
+[ ! -d "$DROPBOX_DIR" ] && exit 1
+
+# xdg-user-dirs-update --set DOWNLOAD "$HOME/Downloads" # Default location
+
+rmdir Videos Documents Pictures Public Desktop Templates Music
+mkdir -p ~/.local/share/{Public,Desktop,Templates}
+
+xdg-user-dirs-update --set DESKTOP "$HOME/.local/share/Desktop"
+xdg-user-dirs-update --set PUBLICSHARE "$HOME/.local/share/Public"
+xdg-user-dirs-update --set TEMPLATES "$HOME/.local/share/Templates"
+
+xdg-user-dirs-update --set DOCUMENTS "$DROPBOX_DIR/Documents"
+xdg-user-dirs-update --set MUSIC "$DROPBOX_DIR/Music"
+xdg-user-dirs-update --set PICTURES "$DROPBOX_DIR/Pictures"
+xdg-user-dirs-update --set VIDEOS "$DROPBOX_DIR/Videos"
+
 ln -s Dropbox/Videos .
 ln -s Dropbox/Documents .
 ln -s Dropbox/Pictures .
-ln -s Dropbox/Media_Library/Music .
-ln -s .profile .zprofile
-ln -sf /opt/intel/oneapi/compiler/latest/linux/bin/intel64/ifort ~/.local/bin
-
-# TODO replaced with the latetst matlab version
-ln -s /home/yiannis/.local/MATLAB/R2018a/bin/matlab ~/.local/bin
-ln -s /home/yiannis/.local/MATLAB/R2018a/bin/mbuild ~/.local/bin
-ln -s /home/yiannis/.local/MATLAB/R2018a/bin/glnxa64/mlint ~/.local/bin
-
-cp "/home/yiannis/Dropbox/Programs/Matlabs/MathWorks MATLAB R2018a Linux/matlab.desktop" ~/.local/share/applications
-cp "/home/yiannis/Dropbox/Programs/stata/stata14.desktop" ~/.local/share/applications
-update-desktop-database ~/.local/share/applications
+ln -s Dropbox/Projects .
+ln -s Dropbox/Music .
+# ln -s .profile .zprofile

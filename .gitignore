@@ -5,7 +5,7 @@ __pycache__/
 log.txt
 .idea/
 fix
-vars
+/vars
 test
 Dockerfile
 cp_to_vm

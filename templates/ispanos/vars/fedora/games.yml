@@ -1,9 +1,0 @@
----
-packages:
-  # - wine
-  # - package: gperftools-libs
-  #   purpose: Needed for CS:GO
-  # - package: xpadneo
-  #   purpose: Xbox one controller driver
-  #   repository: sentry/xpadneo
-  #   # https://atar-axis.github.io/xpadneo/

@@ -106,3 +106,14 @@ packages:
   - package: g810-led
     purpose: G810 keyboard led driver
     repository: lkiesow/g810-led
+
+---
+# GAMES
+packages:
+  - wine
+  - package: gperftools-libs
+    purpose: Needed for CS:GO
+  - package: xpadneo
+    purpose: Xbox one controller driver
+    repository: sentry/xpadneo
+    # https://atar-axis.github.io/xpadneo/

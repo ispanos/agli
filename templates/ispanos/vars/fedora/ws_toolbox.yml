@@ -18,6 +18,7 @@ prerequisite_packages:
 
 pre_install:
   run:
+    - sudo dnf upgrade -y
     - >
       grep 'max_parallel_downloads=20' /etc/dnf/dnf.conf ||
       echo 'max_parallel_downloads=20' |

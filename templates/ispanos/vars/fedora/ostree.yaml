@@ -5,7 +5,6 @@
 dotfiles: "https://github.com/ispanos/dotfiles/"
 pre_install:
   run:
-    - echo 'blacklist pcspkr' | sudo tee /etc/modprobe.d/beep-blacklist.conf
     - |
         sudo localectl set-locale LC_ADDRESS=el_GR.UTF-8
         sudo localectl set-locale LC_NAME=el_GR.UTF-8

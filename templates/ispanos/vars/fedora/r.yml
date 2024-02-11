@@ -23,8 +23,8 @@ packages:
 
   - package: R-CRAN-languageserver
     purpose: Vscode-R
-  - package: R-CRAN-httpgd
-    purpose: Vscode-R
+  # - package: R-CRAN-httpgd # https://cran.rstudio.com/web/packages/httpgd/index.html
+    # purpose: Vscode-R
     # remotes::install_github("ManuelHentschel/vscDebugger")
 
   # R in Jupyter notebook

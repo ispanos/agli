@@ -41,4 +41,3 @@ def clone_dotfiles(repo: str, user: str = None) -> None:
     os.remove(f"{dir}/.gitignore")
 
     execute_command(f"cp -rfT {dir}/ /home/{user}/")
-    force_symlink(f"/home/{user}/.profile", f"/home/{user}/.zprofile")

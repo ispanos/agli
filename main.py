@@ -128,8 +128,11 @@ def main(args):
 
     log_time()
 
-    clone_dotfiles(config.dotfiles_repo, config.current_user)
-    change_hostname(config.hostname)
+    if config.dotfiles_repo is not None:
+        clone_dotfiles(config.dotfiles_repo, config.current_user)
+
+    if config.hostname is not None:
+        change_hostname(config.hostname)
 
     # Added here to avoid installing unneeded dependencies.
     package.remove(config.junk)

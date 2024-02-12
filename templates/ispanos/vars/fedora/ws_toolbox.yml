@@ -18,6 +18,8 @@ prerequisite_packages:
 
 pre_install:
   run:
+    - echo 'ZDOTDIR=$HOME/.config/zsh' | sudo tee /etc/zshenv
+    - echo 'PATH=$PATH:$HOME/.local/bin' | sudo tee -a /etc/profile
     - sudo dnf upgrade -y
     - >
       grep 'max_parallel_downloads=20' /etc/dnf/dnf.conf ||
